@@ -23,7 +23,7 @@
     
 // ----------------------------------------------------------------------------------
 
-//!!  Another metho
+//!!  Another method
 
  
 // var num =6;  // You only need one declaration
@@ -45,24 +45,46 @@
 //         console.log("Number is Not Prime");
 //     }
 
+// __________________________________________________
 
-var num=2;
+// var num=2;
 
-var isprime=true;
+// var isprime=true;
 
-for(let i=2 ; i<Math.sqrt(num); i++)
-{
-    if(num % 2==0)
+// for(let i=2 ; i<Math.sqrt(num); i++)
+// {
+//     if(num % 2==0)
+//     {
+//        isprime=false;   
+//     }
+//     break;
+// }
+
+// if(isprime)
+// {
+//     console.log("It is prime Number");
+// }
+// else{
+//     console.log("It is not prime number");
+// }
+
+
+
+var x=1;
+
+let isprime=true;
+
+    if(x%2==0)
     {
-       isprime=false;   
-    }
-    break;
-}
+        isprime=false;
 
-if(isprime)
-{
-    console.log("It is prime Number");
-}
-else{
-    console.log("It is not prime number");
-}
+        console.log(isprime);
+     
+    }
+    else{
+        console.log(isprime);
+    }
+
+
+// ---------------------------------------------------------------------
+

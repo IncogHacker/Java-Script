@@ -36,22 +36,33 @@
 
 // for table 
 
-var _table = 5;
-var i = 1;
-while (i <= 10) {
-    var store = i * _table;
+// var _table = 5;
+// var i = 1;
+// while (i <= 10) {
+//     var store = i * _table;
 
-    // console.log(_table + " * " + i + " = " + store);
+//     // console.log(_table + " * " + i + " = " + store);
 
-    // we can also write like this 
+//     // we can also write like this 
 
-    // console.log(`${_table} * ${i} = ${store}`);
+//     // console.log(`${_table} * ${i} = ${store}`);
 
-    console.log(`5 * ${i} = ${store}`);
+//     console.log(`5 * ${i} = ${store}`);
 
   
 
-    i++;
+//     i++;
 
+// }
+
+// ----------------------------------------------------------------------
+
+// ! Generating a table using for loop
+
+var num=5;
+
+for(let i=0; i<=10; i++)
+{
+    let store=num*i;
+    console.log(`${num} *${i} = ${store}`);
 }
-

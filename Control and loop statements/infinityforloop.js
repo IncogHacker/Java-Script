@@ -8,6 +8,10 @@
 
 ///ANother way to write infinity loop
 
+
+//* use case: Game Development:
+//? In game development, an infinite loop can be used to continuously update and render game frames until a specific condition (e.g., game over) is met.
+
 for(;;)
 {
     console.log("1");
