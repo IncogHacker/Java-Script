@@ -1,40 +1,64 @@
 
 // Calculator
 
-function calculator(a,b,Addition) {
+// function calculator(a,b,Addition) {
 
-let store=0;
-    switch (Addition) 
-    {
-        case Addition:
-            store = a + b;
+// let store;
+//     switch (Addition) 
+//     {
+//         case Addition:
+//             store = a + b;
     
-            break;
-        case MUltiplication:
-            store = a * b;
+//             break;
+
+//         case Multiplication:
+//             store = a * b;
     
-            break;
+//             break;
     
-        case Divide:
+//         case Divide:
     
-            store = a / b;
+//             store = a / b;
     
-            break;
+//             break;
     
-        case Subtraction:
-            store = a - b;
+//         case Subtraction:
+//             store = a - b;
     
-            break;
+//             break;
             
     
-            default:"NO operator is selected";
-    }
+//             default:
+//                 return "NO operator is selected";
+//     }
 
-    return store;
+//     return store;
+// }
+
+// let  store =calculator(5,7,"Addition");
+
+
+// console.log(store);
+
+
+
+//! -------------------------------------------------------------------------
+
+let calculator =(a  ,b ,operator) =>
+{
+   switch('-')
+   {
+    case '-':
+    
+    return a+b;
+
+    case '+':
+
+    return a*b;
+
+    default:
+        return "no operator"
+
+   }
 }
-
-let  store =calculator(5,7,"Addition");
-
-
-console.log(store);
-
+console.log(calculator(5,2,"-"));
