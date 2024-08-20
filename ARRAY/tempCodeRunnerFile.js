@@ -1,1 +1,1 @@
-let arr=[];
+console.log(fruits);
