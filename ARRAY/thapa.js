@@ -3,8 +3,11 @@
 //* =====================================
 
 //! Iterable - object where you can use the for-of loop
+
 //! Array-like object - Any object with length property and use indexes to access items
+
 //! Arrays as Objects:  Arrays in JavaScript are a specific type of object that has numeric keys (indices) and a length property. The indices are automatically maintained, and the length property is automatically updated when you add or remove elements from the array.
+
 //! typeof Operator: The typeof operator in JavaScript returns "object" for both arrays and regular objects.
 
 //* JavaScript Array is a data structure that allows you to store and organize multiple values within a single variable. It is a versatile and dynamic object. It can hold various data types, including numbers, strings, objects, and even other arrays. Arrays in JavaScript are zero-indexed i.e. the first element is accessed with an index 0, the second element with an index of 1, and so forth.
@@ -273,10 +276,9 @@
 //   { name: "Tablet", price: 300 },
 //   { name: "Smartwatch", price: 150 },
 // ];
-// // Filter products with a price less than or equal to 500
+// Filter products with a price less than or equal to 500
 
-// const filterProducts = products.filter((curElem) => {
-//   //   console.log(curElem.price <= 500);
+// const filterProducts = products.filter((curElem) => {   //   console.log(curElem.price <= 500);
 //   return curElem.price <= 500;
 // });
 // console.log(filterProducts);
@@ -284,8 +286,8 @@
 // //! Filter unique values
 // const numbers = [1, 2, 3, 4, 6, 5, 6, 7, 8, 9];
 // let uniqueValues = numbers.filter((curElem, index, arr) => {
-//   //   console.log(index);
-//   //   console.log(arr.indexOf(curElem));
+  //   console.log(index);
+  //   console.log(arr.indexOf(curElem));
 //   return arr.indexOf(curElem) === index;
 // });
 // console.log(uniqueValues);
@@ -391,8 +393,8 @@ const numbers = [1, 2, 3, 4, 5];
 // The reduce method in JavaScript is used to accumulate or reduce an array to a single value. It iterates over the elements of an array and applies a callback function to each element, updating an accumulator value with the result. The reduce method takes a callback function as its first argument and an optional initial value for the accumulator as the second argument.
 // syntax
 // array.reduce(function callback(accumulator, currentValue, index, array) {
-//   // Your logic here
-//   // Return the updated accumulator value
+   // Your logic here
+  // Return the updated accumulator value
 // }, initialValue);
 
 // callback: A function that is called once for each element in the array.

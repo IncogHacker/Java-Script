@@ -7,6 +7,8 @@
 
 //     return `${current*2}`;
 
+//! Creates a new array with tranformed elements
+
 // });
 
 // console.log(callfunc);       //output is [ '2', '4', '6', '8', '10', '12' ]
@@ -18,7 +20,7 @@
 
 // let number=[1,2,3,4,5,6];
 
-// for(let item of number )
+// for(let item of number ) 
 // {
 //    console.log(item);                         //output is   
 //                                                       //    2
@@ -38,6 +40,8 @@ let number=[1,2,3,4,5];
 number.forEach((current,index,arr)=>{
 
     console.log(`${current*2}`);  //same output above for-of-loop
+
+    //perform action on each element
 
 });
 
