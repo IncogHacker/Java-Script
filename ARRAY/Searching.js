@@ -55,4 +55,3 @@ result3=number3.lastIndexOf(6,8);//8 tak search krega..
 console.log(result3);//output is 7
 
 
-

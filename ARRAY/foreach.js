@@ -1,12 +1,12 @@
 
-//! 3: forEach Method
-//* The arr.forEach() method calls the provided function once for each element of the array. The provided function may perform any kind of operation on the elements of the given array.
+//! 1: forEach Method
+//* The arr.forEach() method calls the provided function once for each element of the array. The provided function may perform any kind of operation on the elements of the given array.(in this method fucntion call each element at a time)
 
 // let fruits=['apple','orange', 'guava','pomogranate'];
 
 // fruits.forEach((currentelem,index,arr)=>{
 
-//      console.log(`${currentelem } ${ index}`);
+//      console.log(`${currentelem } ${index}`);
 
 //     console.log(arr);
 // });
@@ -29,7 +29,7 @@
 
 
 
-// ? 4: map function
+// ? 2:  function(map)
 //* map() creates a new array from calling a function for every array element. map() does not change the original array.
 
 // let fruit=['apple','orange','guava','pineapple'];

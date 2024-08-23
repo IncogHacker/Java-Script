@@ -1,1 +1,1 @@
-
+callfunc.indexOf((c))
