@@ -1,8 +1,8 @@
-//? The splice(start , deleteCount , item1 ,item2....n) method of Array instances changes the contents of an array by removing or replacing existing elements and/or adding new elements in place
+//? The splice(start , deleteCounxt , item1 ,item2....n) method of Array instances changes the contents of an array by removing or replacing existing elements and/or adding new elements in place
 
 // let fruits=[`apple`, `mango`,`guava`,`pomogranate`];
 
-// fruits.splice(`apple`);
+//  fruits.splice(`apple`);
 //  console.log(fruits); //gives output as empty array if we use splice here
 
  
