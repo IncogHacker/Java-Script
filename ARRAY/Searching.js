@@ -5,16 +5,15 @@
 //! indexOf(searchElement);
 //! indexOf(searchElement, fromIndex);
 
-// const persons=[`sita`,`ram`,`hari`,`vishal`,`gita`];
+const persons=[`sita`,`ram`,`hari`,`vishal`,`gita`];
 
 // console.log(persons.indexOf("vishal")); //gives output is 3
 // console.log(persons.indexOf(3));  //not present so give output -1
 
 
+ console.log(persons.indexOf(`ram`));
 
 
-
-//? 2: lastIndexOf Method: The lastIndexOf() method of Array instances returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.
 
 //! includes(searchElement);
 //! includes(searchElement, fromIndex);

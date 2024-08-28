@@ -21,3 +21,17 @@
 
 // initialValue (optional): An initial value for the accumulator. If not provided, the first element of the array is used as the initial accumulator value.
 
+
+
+
+
+// number.reduce((accumulator, current , index ,arr)=>{},initialvalue);// !  Syntax
+
+const productprice=[100,300,500,600,800];
+
+let store= productprice.reduce((accumulator,current)=>{
+
+    return accumulator + current;
+},0);
+
+console.log(store); //gives the total price
