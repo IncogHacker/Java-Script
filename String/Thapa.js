@@ -316,7 +316,6 @@ const pangramChecker = (str) => {
         curElem.charCodeAt() >= "a".charCodeAt() &&
         curElem.charCodeAt() <= "z".charCodeAt()
     );
-    
     // console.log(values);
   
     return new Set(values).size === 26;

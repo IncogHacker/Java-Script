@@ -38,7 +38,7 @@ let array2=[`rishabh`, `nandani`,`riya`];
  let storefunc= array2.map((current,index,arr)=>{
 
 
-    return current.charAt(0).toUpperCase()+ current.slice(1);
+    return current.charAt(0).toUpperCase() + current.slice(1);
    
     
  });
