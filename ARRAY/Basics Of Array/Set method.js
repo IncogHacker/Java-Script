@@ -4,7 +4,7 @@
 
 // number.set((current,index,arr)=>{
 
-    // console.log([new Set(number)]);  //prints the total numbers of elements in the array...
+    // console.log([new Set(number)]);  //prints the total numbers of elements in the array and remove duplicate elemts...
 
     // console.log([...new Set(number)]); //mainly it spread the elemnts in array
 

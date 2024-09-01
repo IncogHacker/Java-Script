@@ -3,7 +3,7 @@
 var a=5;
 var b=10;
 
-var areaOfShapes = "Square";
+var areaOfShapes = "circle";
 
 switch(areaOfShapes)
 {
@@ -17,8 +17,10 @@ switch(areaOfShapes)
   case "circle":
 
   var r=a;
-  var circle= 3.142*Math.sqrt(r);
-  console.log("Area of Circle--"+ circle);
+  var circle= Math.PI*Math.pow(r,2);
+    
+  var store = Math.round(circle);
+  console.log("Area of Circle--"+ store);
 
   break;
 
