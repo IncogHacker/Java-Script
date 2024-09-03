@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+<body>
+    
+    <!-- Create Html tags dynamically with the help of DOM in js  example like <p></p> -->
+
+  
+    <div>
+        <h1>
+            Creating And Storing 
+        </h1>
+    </div>
+
+    <div>
+           <span>
+            <input type="text" placeholder="Type It" id="input">
+            <button id="submit">
+                Submit
+            </button>
+           </span>
+    </div>
+
+    <div class="new">
+
+    </div>
+
+
+    <script>
+
+        let inputElem=document.getElementById("input");
+        let submit= document.getElementById("submit");
+
+        let newps= document.getElementsByClassName("new")[0]; // if we use this we have to run loop or when we apply[0] it takes the first elemnt..
+        console.log(newps);
+
+        // let newp= document.querySelector(".new"); 
+        // console.log(newp);
+
+        let callingfunc=()=>{
+                 
+         let para=document.createElement("p");
+        
+         para.textContent=inputElem.value;
+
+         console.log(para);
+
+         newps.append(para);// para get store in the new div 
+
+        //  newps.appendChild(para);
+
+          inputElem.value=" ";
+        
+        
+        };
+
+
+        submit.addEventListener('click',()=>{
+
+            callingfunc();
+        });
+
+
+        newps.addEventListener('click',(event)=>{// giving direct parent click event
+        
+            console.log(event.target);
+
+            let currentelem= event.target;
+
+            currentelem.remove();
+
+        });
+    </script>
+</body>
+</html>

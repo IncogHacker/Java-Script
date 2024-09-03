@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta name="charset" content="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <meta name="keyword" content="xyz">
+    <meta name="description" content="xyz">
+    <title>DOM-Navigation</title>
+    <link rel="stylesheet" href="">
+
+</head>
+
+<body>
+    <h1>Previous Sibling</h1>
+    <h2>Here We learn About Document Object Model- Dom.Navigation</h2>
+    <p>NExt--Siblings of H1.......</p>
+   <style>
+    p{
+        font-size: 2rem;
+    }
+   </style>
+
+    <script>
+        // ----------------------------Representing the Documents------------------------------------------
+        let parent = document;
+        console.log(parent);
+
+        let childbody = document.body;
+        console.log(childbody);
+
+        let childhead = document.head;
+        console.log(childhead);
+        // --------------------------------------------------------------------------
+
+
+
+        //? ------------------------NODE-LIST..-------------------------------------
+        let x = childbody.childNodes;
+        console.log(x);
+
+        let y = childhead.childNodes;
+        console.log(y);
+
+        // if we use children it gives the tags names in form of nodes(called HTML-collection)
+        let y1 = childbody.children;
+        console.log(y1);
+        //  --------------------------------------------------------------------
+
+
+        // <!-- -----------------firstChild and firstElementChild----------------------------- -->
+
+        let x0 = childbody.firstChild;
+        console.log(x0); //output is text
+
+    
+        let x1 = childbody.firstElementChild;
+        console.log(x1); //output is h1
+
+        let x2 = childbody.lastElementChild;
+        console.log(x2);// give output script
+
+                                      
+            //   <!-- ---------------Siblings(h1 ka sibling kaun hai)----------------------------- -->
+                               
+                 let next = x1.nextElementSibling; //means h1 ka sibbling kaun hai 
+                console.log(next); // output is h2 coxz h1 ka sibbling
+
+                let previous=next.previousElementSibling;
+                console.log(previous); // p(previous sibling)
+
+
+                let parentnode=previous.parentElement;
+                console.log(parentnode);// output is body 
+
+            //   <!-- -----------------******----------------------------- -->
+
+        // <!-- ------------------------end---------------------- -->
+
+
+           
+              
+
+    </script>
+
+</body>
+
+</html>

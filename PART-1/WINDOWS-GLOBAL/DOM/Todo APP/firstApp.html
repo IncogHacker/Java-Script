@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"  content="xyz">
+    <meta name="keyword" content="xyz">
+    <link rel="stylesheet" href="App.css">
+    <title>Storing-Data</title>
+</head>
+<body>
+    <h1>Taking Data From User And Store It.. Todo App</h1><br><br>
+   <span>
+    <input type="text" placeholder="Enter The Data" id="inputfield">
+    <button class="click">Submit-it</button>
+</span> 
+<p id="paragraph">  </p>
+
+
+   <script>
+    // let select = document.querySelector("#inputfield");
+    // console.log(select);
+
+    let inputElem=document.getElementById("inputfield");
+    console.log(inputElem);
+
+      // we can serach the statement using both ways 
+
+    let getclick=document.querySelector(".click");
+    console.log(getclick);
+
+    let para=document.getElementById("paragraph");
+    // console.log(para.innerHTML);
+
+    let caalingfun=()=>
+   {
+       store=`Your Selected Item is  ${inputElem.value}`;
+       console.log(store);
+       para.textContent=store;
+   };
+
+  getclick.addEventListener('click',()=>{
+
+    caalingfun();
+
+  });
+ 
+
+   </script>
+</body>
+</html>

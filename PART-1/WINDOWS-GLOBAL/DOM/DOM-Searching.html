@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="xyz">
+    <meta name="description" content="xyzzz">
+    <link rel="stylesheet" href="">
+    <title>DOM-Searching</title>
+
+</head>
+
+<div>
+    <h1 id="heading">DOM API-1</h1>
+    <ul class="list--of-class">
+        <li>Node-1</li>
+        <li>Node-2</li>
+        <li>Node-3</li>
+        <li>Node-4</li>
+        <li style="display: none;">Node-5</li>
+    </ul>
+</div>
+
+<div>
+    <h1>
+        DOM API-2(Application Program Interface)
+    </h1>
+    <input type="text" placeholder="Enter your name">
+    <button>Click-me</button>
+</div>
+
+<!-- ***************************************************************
+  -->
+<script>
+
+                           //    ****get element by id*********
+
+    let searching = document.getElementById("heading")// do not use #
+    console.log(searching.innerHTML);
+    console.log(searching.innerText);
+    console.log(searching.textContent);
+    // here we get id heading data.. and using inner html give only content inside heading (DOM API-1)
+
+    //  -------------------------------------------------------------------------------------
+
+
+    
+    
+    
+                                // ****getElementsByClassName***
+
+    let searching2 = document.getElementsByClassName("list--of-class")
+    console.log(...searching2); // spread the operator 
+
+    // we can also use for of loop 
+    for (let item of searching2) {
+        console.log(item.innerHTML);
+        console.log(item.innerText);// not show node 5
+        console.log(item.textContent);
+    }
+
+
+    // console.log(searching2.innerHTML);//give undefined
+
+    //-----------------------------------------------------------------------------------------------
+
+
+                             // ******getElementbyTagName(like h1 ,li p etc)*****
+
+      let searching3= document.getElementsByTagName("li");
+    //   console.log(searching3);// give all li output
+
+    for(let item of searching3)
+    {
+      console.log(item.innerHTML);                       
+    }
+
+
+
+    // ---------------------------------------------------------------------------------------------
+
+                                    //    ********selectors Find the first element that matches the specified CSS selector.*****
+
+
+    let searching4=document.querySelector("#heading");// yahan # lgana hai to return id selector
+    // console.log(searching4);
+
+    // changing data dynamically by js  with the help of dom
+    console.log(searching4.innerHTML ="Changed");// yhan DOM API ke jagah changed aagya 
+  
+
+    let searching5= document.querySelector("li");
+    console.log(searching5);
+
+    // for selecting all li 
+
+    let searching6= document.querySelectorAll("li");
+    // console.log(searching6);// gives in the form of nodelist
+
+// using forEach 
+
+     searching6.forEach((current)=>console.log(current));
+
+</script>
+
+
+
+</body>
+
+</html>
