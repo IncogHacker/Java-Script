@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , user-sccalable="0">
+    <title>Key-Boards Events</title>
+    <meta name="description" content="xsd">
+    <meta name="type" content="fdsf">
+    <meta name="robots" content="index">
+</head>
+
+<body>
+
+    <div class="main">
+
+
+        <input type="text" id="myinput" placeholder="Type something...">
+
+        <div class="output">
+
+            <p class="KeyPressed">KeyPressed:</p>
+            <p class="KeyCode">KeyCode :</p>
+            <p class="CharCode">Char CodeA :</p>
+            <p class="EventType">Event Type :</p>
+
+        </div>
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                width: 100%;
+                height: 100vh;
+                background-color: rgb(82, 73, 73);
+                display: grid;
+                place-items: center;
+
+                div {
+
+                    width: 20rem;
+                    height: 20rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 10px;
+                    /* border: 2px solid red; */
+
+
+                    input {
+
+                        width: 20rem;
+                        height: 3rem;
+                        box-shadow: 0px 0px solid white;
+                        border: 2px solid black;
+                        border-radius: 10px;
+                        padding-left: 20px;
+                    }
+
+                    .output {
+
+
+                        background-color: #050505;
+                        border-left: 4px solid white;
+                        border-radius: 7px;
+                        /* border: 2px solid red; */
+                        display: flex;
+                        padding-left: 20px;
+                        /* flex-direction: column; */
+                        align-items: flex-start;
+                        /* align-items: flex-end; */
+
+
+
+                        p {
+
+
+                            /* padding-bottom: 30px; */
+                            margin-bottom: 20px;
+                            margin-top: 20px;
+                            text-align: left;
+                            color: white;
+                        }
+
+                    }
+
+                }
+            }
+        </style>
+
+
+
+        <script>
+            let input = document.getElementById("myinput");
+
+
+
+            // let handlekeypress=(event)=>
+            // {
+            //    console.log(event);// window global object gives properties of event object that is input
+
+            // }
+
+            // -------For a Specific properties no alll------
+
+            let handlekeypress = (event) => {
+
+                console.log("KeyPressed:", event.key);
+                console.log("KeyCode :", event.code);
+                console.log("Type:", event.type);
+               
+
+
+
+                // document.querySelector(".KeyPressed").textContent =`KeyPressed1:${event.key}`;
+                // document.querySelector(".KeyCode").textContent=`KeyCode:-- ${event.code}`;
+                // document.querySelector(".CharCode").textContent=`Charcode:-- ${event.key.charCodeAt(0)}`;
+
+                for (let item of output) {
+
+                    if(item.classList.contains("KeyPressed"))
+                {
+                    item.textContent = `KeyPressed:-- ${event.key}`;
+                  
+                }
+                else if(item.classList.contains("KeyCode"))
+                {
+                          item.textContent=`KeyCode:-- ${event.code}`;
+                }
+                else if(item.classList.contains("CharCode"))
+                {
+
+                    item.textContent=`Char-Code:--  ${event.key.charCodeAt(0)}`;
+                }
+                
+                else if(item.classList.contains("EventType"))
+
+                {
+                    item.textContent= `Event Type:-- ${event.type}`;
+                }
+                     
+                item.style.color="white";
+                }
+            }
+            
+            // input.addEventListener('keydown', (handlekeypress));
+
+            input.addEventListener('keyup',(handlekeypress));
+
+            let output = document.querySelectorAll(".output p");
+
+        </script>
+</body>
+
+</html>

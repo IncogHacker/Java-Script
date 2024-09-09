@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise</title>
+</head>
+
+<body>
+    <!-- Using Browser Object mode And Document Object model  -->
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+
+
+
+    <style>
+        h1,
+        h2 {
+            display: grid;
+            line-height: 4rem;
+            place-items: center;
+            /* font-size: 3rem; */
+            color: rgb(146, 136, 136);
+
+        }
+    </style>
+    <div class="Heading-Div">
+        <h1>Practise-First Page Using Java Script...</h1>
+        <h2>Enter The Details oF Candidate---</h2>
+    </div>
+
+    <div class="Form-Section">
+
+        <form action="Submit-Form">
+
+            <label for="Candiadte-Names">Candiadte-Names</label>
+            <input type="text" placeholder="Enter Your Name" name="Your-Name" id="names">
+
+            <label for="Father's-Name">Father's-Name</label>
+            <input type="text" placeholder="Enter Your Father Name" name="Father-Name" id="01">
+
+            <label for="Mother">Mother's-Name</label>
+            <input type="text" placeholder="Enter Mothers Name" name="DOB" id="01">
+            <label for="Number">Phone-Number</label>
+            <input type="text" placeholder="Phone-Number" name="Number" id="01">
+
+            <label for="Gender">Gender:</label>
+            <select name="Geder" id="gender">
+                <option value="SELECT YOUR GENDER">SELECT YOUR GENDER</option>
+                <option value="MALE">Male</option>
+                <option value="FEMALE">Female</option>
+                <option value="TRANSGENDER">Transgender</option>
+                <option value="Bi-Sexual">Bi-Sexual</option>
+
+            </select>
+
+
+        </form>
+
+
+        <style>
+            .Form-Section {
+
+                width: 20rem;
+                margin: auto;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    input {
+
+                        margin-bottom: 10px;
+                        height: 30px;
+
+
+                    }
+
+
+                }
+
+            }
+        </style>
+    </div>
+
+    <div class="BOM-Window">
+
+        <button id="form">SUBMIT-FORM</button>
+        <button onclick="window.open('http://techfrontierweb.netlify.app')">NEW TAB</button>
+        <button onclick="location.reload(),window.alert('Reloading...')">RELOAD</button>
+        <button onclick="window.history.back()">BACK</button>
+        <button onclick="window.history.forward()">Forward</button>
+        <button onclick="location.replace('http://techfrontierweb.netlify.app')">Link-replace</button>
+        <button onclick="location.assign('http://techfrontierweb.netlify.app')">Link-Assign</button>
+
+        <style>
+            .BOM-Window {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                button {
+                    width: 100px;
+                    background-color: rgb(238, 199, 199);
+                    border-radius: 5px;
+
+                    &:hover {
+                        background-color: rgb(204, 169, 169);
+                    }
+                }
+            }
+        </style>
+    </div>
+
+
+
+    <div class="Result">
+
+
+
+        <style>
+            .Result {
+                margin-top: 2rem;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </div>
+
+
+    <script>
+
+        //   window.alert('Your Page is Opened');
+
+        // <!-- -----------------Using Map Method For Serarching----------------------------- -->//
+
+
+
+
+        let search = document.getElementsByClassName("Form-Section")
+
+        // console.log(search);//Give HTML collection which is not Array
+
+        let convert = [...search];
+
+        //    let convert=Array.from(search);
+
+        let store = convert.map((current) => {
+
+            console.log(current.childNodes);
+
+            return current.childNodes;
+        });
+
+
+
+
+        //<!-- -----------------Using forEach Method For Serarching----------------------------- -->
+
+        let get = document.querySelectorAll('.BOM-Window')
+
+        //  let array=[...get];
+        //  console.log(array);
+
+        // get.forEach((current)=>console.log(current.textContent));
+
+
+
+        //<!-- -----------------Using forofloop Method For Serarching----------------------------- -->
+
+        let store2 = document.getElementsByTagName("label")
+
+        console.log(store2); //HTml collection
+        console.log(store2.childNodes); //Nodes collection
+
+        for (let item of store2) {
+            console.log(item.innerText);
+
+        }
+
+
+        //<!-- -----------------Working On navigation----------------------------- -->
+
+        let parent = document.body;
+
+        console.log(parent);
+
+        let nodes = parent.childNodes;
+        console.log(nodes);
+
+        let children = parent.children;
+        console.log(children);
+
+
+
+
+        // ---------------------Start Working On real Project -----------------------------------------------
+
+
+
+        // let inputs = document.getElementById("names");
+        // // console.log(inputs);
+
+        // let click = document.getElementById("form");
+        // // console.log(click);
+
+        // // let store1=document.getElementsByClassName("Result")[0];
+        // // // console.log(store1);
+
+        // let store1=document.querySelector(".Result");
+        // // console.log(store1);
+
+
+        // ---------------------Work on Only first Input-----------------------------------
+
+        //function callfunc()
+
+        // let callfunc=()=>
+        // {
+
+        //     console.log(inputs.value);
+
+        // //    store1.textContent=inputs.value;
+
+        //     //  inputs.value=" "; //Empty the Input Value
+
+        //      let newpara=document.createElement("p");
+
+        //       newpara.textContent=inputs.value;
+
+        //       store1.appendChild(newpara);
+
+        // };
+
+        // click.addEventListener('click',(callfunc));
+
+
+
+
+        // ---------------------Working on all inputs-----------------------------------
+
+
+        let user = document.getElementsByTagName("input")
+        let label = document.getElementsByTagName("label")
+        let submit = document.getElementById("form")
+        let store1 = document.querySelector(".Result");
+        let genderSelect = document.getElementById("gender");
+
+        // console.log(genderSelect.innerText);
+
+
+
+
+
+
+
+
+
+
+        let callfunc = () => {
+
+             store1.innerHTML = '';
+
+            for (let i = 0; i < label.length; i++) {
+
+                // console.log(label[i].innerHTML);
+
+                 
+
+                let para=document.createElement("p");
+                console.log(para);
+
+                para.textContent=label[i].textContent;
+
+                store1.append(para.textContent+"----");
+
+              
+              
+                // store1.append(label[i].innerHTML + "---  ");
+
+                if (user[i]) {
+
+                    // console.log(user[i].value);
+
+                    let para2 =document.createElement("p");
+                    console.log(para2);
+
+                    para2.textContent=user[i].value; 
+
+                    store1.append(para2.textContent+"  , ");
+
+                    // store1.append(user[i].value + "  ,  ");
+
+                }
+
+
+            }
+
+
+            let selectedGender = genderSelect.value;
+
+            if (selectedGender !== "SELECT YOUR GENDER")
+             {
+                store1.append(selectedGender);
+                // store1.innerHTML +=   selectedGender;
+            }
+            
+            else {
+            //    store1.innerHTML += "Gender: Not selected";
+               store1.append("GENDER NOT SELECTED");
+            }
+
+
+
+        }
+
+
+
+        submit.addEventListener('click', (callfunc));
+
+
+    </script>
+
+</body>
+
+</html>

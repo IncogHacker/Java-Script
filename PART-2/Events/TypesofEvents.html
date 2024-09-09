@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , user-scalable="no">
+    <title>Tyeps OF Events</title>
+    <link rel="stylesheet" href="Events.css">
+</head>
+
+<body>
+
+    <div>
+
+
+
+
+
+        <!-- ----------------Inline Events----------------------------- -->
+        <h1>Inline Events</h1>
+
+        <button onclick="alert ('Welcome')">onclick</button>
+        <button ondblclick="alert('Welcome-Again')">ondblclick</button>
+        <button onmouseover="alert('Mouse-over')">MOUSE-OVER</button>
+        <button onmousewheel="alert('wheel')" )>Wheel</button>
+        <button onmousedown="alert('onmousedown')">Mouse-Down</button>
+        <button onmouseout="alert ('onmouseout')">Mouse-out</button>
+        <!-- work on child elements -->
+        <button onmouseleave="alert('leave')">Mouse-leave</button>
+        <!-- do not work on child elements -->
+        <button oncontextmenu="alert(context)">Context-menu</button>
+
+        <!-- ----------------END Inline Events---------------------------- -->
+
+
+
+
+
+
+
+
+
+        <!-- ------------------DOM Event Handler-------------------------- -->
+
+        <h1>DOM Event Handler</h1>
+
+        <button id="mybtn-2">Click--</button>
+        <button id="mybtn-3">Mouse-Hover</button>
+
+        <script>
+
+            let functioncall = (x) => {
+
+                x();
+            }
+            document.getElementById("mybtn-2").onclick = () => {
+
+                functioncall(() => alert('welcome')); //arrow function passed as a argument here 
+            };
+            // -------------------------------------------------------------------------------
+
+
+            // document.getElementById("mybtn").onclick=()=>
+            // {
+            //     alert('welcome');
+
+            // };//this code does not work ..
+
+            // ------------------------------------------------------------------------------
+
+            // document.getElementById("mybtn-2").onclick = function x()
+            // {
+            //        alert("Welcome trditional method");
+
+            // };
+
+            // -----------------------------------------------------------
+
+
+            let mouseovercall = (y) => {
+
+                y();
+            }
+
+            document.getElementById("mybtn-3").onmouseover = () => {
+
+                mouseovercall(() => alert('welcome-Again'));
+
+            };
+
+
+
+        </script>
+        <!-- ----------------END DOM Event Handler---------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- --------------- --addEvent Listner, Event Handler---------------------------- -->
+
+        <h1>add Event Listner, Event Handler</h1>
+        <button id="one">Mouse-click</button>
+        <button id="Two">dblclick-Again</button>
+
+
+        <script>
+
+        //     let store=document.getElementById("one");
+
+        //    let callfunc=()=>
+        //     {
+        //           console.log(store.innerHTML);
+        //     }
+
+        //     store.addEventListener('click',(callfunc));
+
+
+        // ---------------------------------------------------------------
+
+         let callfunc=()=>{
+
+            alert('welcome-again');
+         }
+
+        document.getElementById("one").addEventListener('click',(callfunc));
+
+
+
+        document.getElementById("Two").addEventListener('dblclick', ()=>{
+
+            alert('Welcome double-click');
+        });
+           
+        </script>  
+        <!-- ----------------END add Event Listner, Event Handler--------------------------- -->
+
+
+
+
+
+
+    </div>
+
+
+    <script>
+
+
+    </script>
+</body>
+
+</html>
