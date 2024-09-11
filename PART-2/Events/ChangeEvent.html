@@ -62,50 +62,12 @@
 
 <script>
 
-    // _____________________________________________________________________________
-
-            //  let inputs= document.getElementById("myinput");
-
-            //  //console.log(...input);
-             
-
-            //  let callfunc=(event)=>{
-
-            //     // if(event.key=="Enter"){
-                             
-            //     //     console.log(event.target.value);
-
-            //     // }
-
-               
-            //     // console.log("Input Value:", event.target.value);
-            //     // console.log("Input Name:" ,event.target.name); //give the name in the input
-            //     console.log("Input Type:" ,event.inputType);
-            //     // console.log("Event Type:" , event.type);
-
-            //     // console.log("Input Name:" , event.key)
-
-
-            //     // document.querySelector(".01").textContent=`"Input Value:" ${event.click}`
-
-
-            //  }
-
-
-            //  inputs.addEventListener('keydown',(callfunc));
-
-            // -----------------------------------------------------------------------------
-
-
-
-
+  
             let callfunc=(event)=>       
 
             {
              
-
-                if(event.key=="Enter")
-            {
+          
                 console.log("Input Value:",event.target.value);
                 console.log("Input Name:",event.target.name);
                 console.log("Event Type:",event.type,',',event.target.type);
@@ -113,41 +75,20 @@
 
                 document.querySelector(".one").textContent=` Input Value: ${event.target.value}`;
                 document.querySelector(".two").textContent=`Input Name : ${event.target.name}`;
-                document.querySelector(".three").textContent=` Input Type: ${lastinputtype}`;
+               document.querySelector(".three").textContent=` Input Type: ${event.inputType}`;
                 document.querySelector(".four").textContent=`Event Type: ${event.type , event.target.type}`;
 
                 
            
 
-            }
+        }
 
-
-        
-
-            if(event.type==="input")
-            {
-
-                lastinputtype=event.inputType;
-
-                console.log("Input Type:",event.inputType);
-                // document.querySelector(".one").textContent=` Input Value: ${event.target.value}`;
-               
-            }
-          
-
-
-        
-
-
-
-            }
+            
 
             let lastinputtype="";
             let store=document.getElementsByTagName("input")[0];
 
             // store.addEventListener('input',(callfunc));  
-
-            store.addEventListener('keydown',(callfunc));
 
             store.addEventListener('change',(callfunc));
 
