@@ -12,38 +12,152 @@
 </head>
 <body>
 
+   
+        <img class="logo" src="/Project-Color Gradient/logo and Images/LOGO-2.png" alt="Error" width="250px">
+
+        
+
     <div class="share">
 
         <a href="https://www.instagram.com/"><button id="one">Share On Instagram
-            <img src="/logo and Images/instagram_2111463.png" alt="">
+            <img src="/Project-Color Gradient/logo and Images/instagram_2111463.png" alt="">
         </button></a>
 
-        <a href="https://www.facebook.com/"><button id="Twp">Share On FaceBook
-            <img src="/logo and Images/facebook.png" alt="">
+        <a href="https://www.facebook.com/"><button id="Two">Share On FaceBook
+            <img src="/Project-Color Gradient/logo and Images/facebook.png" alt="">
         </button></a>
 
 
-       <a href="https://twitter.com/"><button id="Three">Share On  Twitter <img src="/logo and Images/twitter.png" alt=""></button></a>
-        <img src="/logo and Images/github-mark.png" width="30px">
+       <a href="https://twitter.com/"><button id="Three">Share On  Twitter <img src="/Project-Color Gradient/logo and Images/twitter.png" alt=""></button></a>
+
+
+        <a  href="https://github.com/IncogHacker/Java-Script/tree/d0ebf15e26441db27af61c12432f153e8bf9feb8/Project-Color%20Gradient"><img id="single" src="/Project-Color Gradient/logo and Images/logo.png" width="30px"></a>
+
+
+        <a href="https://www.youtube.com/@AlgoMasteryy/playlists"><button id="youtube">Subcribe</button></a>
     
     </div>
 
     <div class="heading">
-        <h1>RI-Color Gradients</h1>
+        <h1>Ri-Color Gradients</h1>
     </div>
     <div class="buttons">
-    <button id="one">Button-1</button>
-    <button id="Two">Button-2</button>
+    <button id="clickbtn1">#3b3b3b</button>
+    <button id="clickbtn2">#b9b9b9</button>
 </div>
 
 <div class="para">
-    <p>Click to Copy Your Code Here</p>
+    <p>Click to Copy Your Code</p>
 </div>
     <div class="Bakground-linear-Gradient">
+
+        <p id="para">background-image: linear-gradient(to right, #000000, #3b3b3b, #777777, #b9b9b9, #ffffff);</p>
        
     </div>
 
+<script>
 
+               let btn1 =document.getElementById("clickbtn1");
+               let btn2 =document.getElementById("clickbtn2");
+               let copy= document.querySelector(".Bakground-linear-Gradient");
+
+                    
+
+            //    __________________________________________________________________________
+           
+
+            let copycall=()=>
+            {
+                    
+                navigator.clipboard.writeText(copy.textContent);
+
+                window.alert("Text is Copied:"  + copy.textContent);
+                   
+            }
+
+                     copy.addEventListener('click',(copycall));
+
+            // _________________________________________________________________________________________
+               let findhexvalue=()=>{
+
+                let hexadecimal= "0123456789abcdef";
+                    let storeclrvalue="#";
+
+                    for(let i=0 ;i<6; i++)
+                {
+                    // console.log(hexadecimal[(Math.floor(Math.random()*16))]);
+                    storeclrvalue+=hexadecimal[Math.floor(Math.random()*16)];
+                
+                }
+                //   console.log(storeclrvalue);
+
+                  return storeclrvalue;
+            };
+
+                let callfunc1 = () =>
+                {
+                   let btnclr1= findhexvalue();
+                   console.log(btnclr1);
+                   
+                //    ----This updates only the pargrapg text no the background colour----
+
+                   let para1=document.querySelector("#para");
+                   //    console.log(para1.innerHTML);
+
+                   para1.textContent=`background-image: linear-gradient(to right, #000000, ${btnclr1}, ${btnclr1}, ${btnclr1}, #ffffff);`;
+
+                //  ----------------------------------------------------------------------------------------------
+
+
+                // -------------Here with the help of Dom we can also style the css---------------
+
+                // console.log(document.body.style.backgroundImage);
+
+                document.body.style.backgroundImage =`linear-gradient(to right , #000000, ${btnclr1}, ${btnclr1}, ${btnclr1}, #ffffff)`;
+
+
+                btn1.textContent=`${btnclr1}`;
+
+                    //  let backgr=getComputedStyle(clickbtn1).backgroundColor;
+                    //  console.log(backgr);
+
+                     clickbtn1.style.backgroundColor=`${btnclr1}`;
+
+
+                    
+               
+                };
+
+                let callfunc2=()=>
+                {
+
+                     let btnclr2=findhexvalue();
+                     console.log(btnclr2);
+
+                     let para1=document.getElementById("para");
+                     
+                     para1.textContent=`background-image: linear-gradient(to left, #000000, ${btnclr2}, ${btnclr2}, ${btnclr2}, #ffffff);`;
+
+                     document.body.style.backgroundImage=`linear-gradient(to left, #000000, ${btnclr2}, ${btnclr2}, ${btnclr2}, #ffffff)`;
+
+
+                           btn2.textContent=`${btnclr2}`;
+
+                           clickbtn2.style.backgroundColor=`${btnclr2}`;
+
+
+                };
+
+
+
+                btn1.addEventListener("click",(callfunc1));
+                btn2.addEventListener("click",(callfunc2));
+              
+
+
+
+
+</script>
    
     
 </body>
