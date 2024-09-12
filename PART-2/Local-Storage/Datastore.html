@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storing-Data</title>
+</head>
+<body>
+    
+    <h1>Using Local Storage To Store The Data</h1>
+    <input type="text" placeholder="Types the Data" id="inputss">
+    <button id="one">Click-to-Store-Data</button>
+
+
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+
+        body{
+
+            width:100%;
+            height: 100vh;
+            display: flex;
+           flex-direction: column;
+           align-items: center;    
+           justify-content: center;  
+           gap:30px;
+           
+           input
+           {
+
+            width:200px;
+            height: 25px;
+            text-align: center;
+           }
+        }
+    </style>
+
+
+<script>
+         let inpstore=document.getElementById("inputss");
+          let click=document.getElementById("one");
+
+
+let callfunc=(event)=>
+{
+//  console.log(inpstore.value);
+
+    if(event.key==="Enter")
+{
+
+    console.log(inpstore.value);
+
+      let existingvalue = localStorage.getItem("Name"); ///get the data from local storage
+
+      let updatevalue= existingvalue ? existingvalue + " , " +inpstore.value : inpstore.value;
+
+      localStorage.setItem("Name",updatevalue);///add the data from local storage
+         
+}     
+
+}
+
+            //   click.addEventListener("click",(callfunc));
+
+              inpstore.addEventListener("keydown",(callfunc));
+
+
+</script>
+</body>
+</html>

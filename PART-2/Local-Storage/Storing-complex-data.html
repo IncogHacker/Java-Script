@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Complex Data And Objects Store in Local Storage</h1>
+
+    <button id="one">Add Data to Local Storage</button>
+    <button id="two">Get Data From Local Storage</button>
+    <button id="three">Delete Data From Local Storage</button>
+
+
+    <style>
+  
+  *{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  h1{
+     position: absolute;
+     top:100px;
+  }
+
+  body{
+    width:100%;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    background-color: rgb(255, 255, 255);
+
+    button{
+
+        width:300px;
+        height: 30px;
+        border-radius: 50px;
+        color: rgb(0, 0, 0);
+    }
+
+
+        #one{
+
+            background-color: green;
+
+            &:hover{
+                background-color: greenyellow;
+            }
+
+        }
+
+        #two{
+                 background-color: aqua;
+
+
+                 &:hover{
+                    background-color: rgb(193, 223, 213);
+                 }
+        }
+
+        #three
+        {
+                  background-color: red;
+
+                  &:hover{
+                    background-color: rgb(185, 120, 120);
+                  }
+        }
+       
+    
+  }
+    </style>
+
+
+<script>
+    
+    ///Creating objects...
+
+    const StudentbioData={
+             
+      fisrtName:"Rishabh",
+      lastname:"Singh",
+      Age:20,
+      Gender:"Male",
+      Grade:"A",
+      Courses:["Math","Science","English"],
+
+      address:{
+        
+        Vill:"Dahan Post Saidpur Dist Ghazipur",
+        city:"Ghazipur",
+        PinCode:"233304",
+
+      },
+    };
+
+                // ----------function to Add the data In local Storage
+           const callfunc=()=>
+           {
+             let convertstr=JSON.stringify(StudentbioData);
+            localStorage.setItem("Complex-Data",`${convertstr}`);
+        
+           }
+
+
+        //    Function to get the data from local Storage or we can read the Data or retrieve the Data
+          const callfunc1=()=>{
+
+
+              //    let RetrievedDataString=localStorage.getItem("Complex-Data");
+             //here we use key coz it is identifier of data stored
+
+                // console.log("RetrievedData From Local Storage in form of String---"+RetrievedDataString);
+                //here we get the data in form of string and if we want the data in previous format that is object we use parse..
+
+                // console.log("RetrievedData From Local Storage---",typeof RetrievedData);//string format
+
+
+                let RetrievedDataObject=JSON.parse(localStorage.getItem("Complex-Data"));
+                     console.log("RetrievedData From Local Storage in Form Of Object---",RetrievedDataObject);
+
+                //    let objectdata= JSON.parse(RetrievedDataObject);
+                //    console.log("RetrievedData From Local Storage in Form Of Object---",objectdata);
+
+           }
+           
+
+           const callfunc2=()=>
+           {
+                      localStorage.removeItem("Complex-Data");
+
+                      
+           }
+
+  // Give null Value Coz it should be in object or we can say that it should be in earlier format coz Studenbiodata store in local storage in form of string and for output in console it should change into earlier format so we use JSON.parse for conversion String to previous Form..
+
+
+
+            document.getElementById("one").addEventListener("click",(callfunc));
+            document.getElementById("two").addEventListener("click",(callfunc1));
+            document.getElementById("three").addEventListener("click",(callfunc2));
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
