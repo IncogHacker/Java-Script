@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>To-Do-Application</title>
+</head>
+
+<body>
+
+    <h1>
+        To-Do-List
+    </h1>
+
+    <form action="/Submit">
+
+
+        <div clas="Add-Data">
+
+            <input type="text" placeholder="Give The Data" id="DataWrite">
+            <button id="Addbtn">Add</button>
+        </div>
+
+        <br><br>
+
+        <div class="Main-get-Data">
+
+
+
+        </div>
+    </form>
+
+  
+    <style>
+        * {
+
+            padding: 0;
+            margin: 0;
+            box-shadow: border-box;
+
+        }
+
+        html {
+            overflow-y: hidden;
+        }
+
+
+
+        body {
+            width: 100%;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+
+            h1 {
+                font-size: 5rem;
+                margin-bottom: 30px;
+            }
+
+            input {
+                width: 200px;
+                height: 30px;
+                border-radius: 5px;
+                text-align: center;
+
+            }
+
+            button {
+
+                width: 70px;
+                height: 20px;
+                border-radius: 50px;
+            }
+
+
+
+            .Main-get-Data {
+
+                div {
+                    /* display: grid;
+                    grid-template-columns: 1fr 1fr ; */
+                    display: flex;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                }
+
+            }
+        }
+    </style>
+
+</body>
+
+
+<script>
+
+
+    let input = document.getElementById("DataWrite");
+    let addbtn = document.getElementById("Addbtn");
+    let datastore = document.querySelector(".Main-get-Data")
+
+
+ 
+
+  
+
+
+    let arraystruc = []; //globally if we not write this it implicitly declare available globally
+    
+
+
+// ***************************************************************************************************************
+    let callfunc = (event) => {
+        event.preventDefault();    //prevent to auto submit when we use form
+
+        let triminput = input.value.trim();
+
+        if(triminput!="" && !arraystruc.includes(input.value.trim())) // if we enter the same value it will not run
+
+    {
+
+        arraystruc.push(triminput);
+
+        arraystruc = [...new Set(arraystruc)]; // remove the duplicates value 
+        console.log(arraystruc);
+
+
+
+        // storing Data in local storage 
+
+        localStorage.setItem("DATA", JSON.stringify(arraystruc));
+
+
+
+
+      
+         
+
+        
+
+
+        //   Creating li and Button and store in my div class Main-get-Data 
+
+        //------------- creating div
+
+        let newdiv = document.createElement("div");
+        newdiv.classList.add("classadd"); //add the class in div
+        console.log(newdiv);
+        datastore.append(newdiv);  //datastore ke andar newdiv daal diyee
+
+
+
+        // -----------------Creating li-------------------------------
+
+        let newli = document.createElement("li");
+        //   console.log(newli);
+        newli.textContent = input.value.trim();
+        newdiv.append(newli);
+
+
+
+        // -------------------Creating Button -----------------------------
+
+        let btn = document.createElement("button");
+        btn.classList.add("btnclass");
+        btn.textContent = "DELETE";
+        newdiv.append(btn);
+        // console.log(btn);
+
+
+        input.value = " "; //After giving Input Input get blanked
+
+    }
+
+    else{
+        input.value = " ";
+    }
+ 
+    }
+
+
+    let removedata=(event)=>
+    {
+           event.preventDefault();
+
+        // console.log(event.target); //if we click any delete button gives this <button class="btnclass">DELETE</button>
+ 
+           let removedata= event.target;
+           console.log(removedata);
+
+           let siblingremove = removedata.previousElementSibling.textContent;
+
+           console.log(siblingremove);
+
+           
+           if(arraystruc.includes(siblingremove))
+           {
+                   
+           }
+
+           
+
+    }
+
+
+
+
+    addbtn.addEventListener("click", callfunc); ///adding  Function
+//  input.addEventListener("click",(callfunc));
+
+    datastore.addEventListener("click",removedata);///deleting Function
+
+
+
+
+
+
+// -------------------------------------------------------------------------------------------------------------
+
+    // ********************Reload hote hi console me local data show krega ye wala function...___***_
+
+
+    showlocaldata = () => {
+
+         let datafromlocal=JSON.parse(localStorage.getItem("DATA"));
+          arraystruc = datafromlocal || [];
+
+        console.log(arraystruc);  ///Gives the Empty ARRAY or Datat which is Already Stored
+
+
+        arraystruc.forEach((current)=>{
+            console.log(current);
+
+//------------- creating div
+
+        let newdiv = document.createElement("div");
+        newdiv.classList.add("classadd"); //add the class in div
+        console.log(newdiv);
+        datastore.append(newdiv);  //datastore ke andar newdiv daal diyee
+
+
+
+        // -----------------Creating li-------------------------------
+
+        let newli = document.createElement("li");
+        //   console.log(newli);
+        newli.textContent = current;
+        newdiv.append(newli);
+
+
+
+        // -------------------Creating Button -----------------------------
+
+        let btn = document.createElement("button");
+        btn.classList.add("btnclass");
+        btn.textContent = "DELETE";
+        newdiv.append(btn);
+        // console.log(btn);
+
+
+    
+});
+
+    }
+    showlocaldata();
+</script>
+
+</html>
