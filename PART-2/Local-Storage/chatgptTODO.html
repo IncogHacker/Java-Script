@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="Practise Sessions">
+    <meta name="description" content="Doing practise and understanding the Todo app">
+    <meta name="robot" content="index">
+    <title>Todo Application</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-top: 10%;
+            display: grid;
+            place-items: center;
+        }
+
+        .Input-sec {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5%;
+            gap: 20px;
+        }
+
+        .Storage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5%;
+            gap: 20px;
+        }
+
+        .newdivadd {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Making The Todo Application </h1>
+    <div class="Input-sec">
+        <input type="text" id="inputakes" placeholder="Enter The Data">
+        <button id="action">Add-Data</button>
+    </div>
+    <div class="Storage"></div>
+
+    <script>
+        let input = document.getElementById("inputakes");
+        let btn = document.getElementById("action");
+        let NewDiv = document.querySelector(".Storage");
+        let arraystore = [];
+
+        let callfunc = () => {
+            let inputtrim = input.value.trim();
+
+            if (inputtrim !== "" && !arraystore.includes(inputtrim))
+             {
+
+                arraystore.push(inputtrim);
+
+                arraystore = [...new Set(arraystore)];
+
+                localStorage.setItem("Data", JSON.stringify(arraystore));
+
+
+                let store = document.createElement("div");
+                store.classList.add("newdivadd");
+                NewDiv.append(store);
+
+
+
+                let list = document.createElement("li");
+                list.textContent = inputtrim; // Use trimmed value
+                store.append(list);
+
+
+
+                let newbtn = document.createElement("button");
+                newbtn.classList.add("classbtn");
+                newbtn.textContent = "Delete";
+              
+
+                // Button click handler
+                newbtn.onclick = () => {
+                    arraystore = arraystore.filter(item => item !== inputtrim);
+
+                    localStorage.setItem("Data", JSON.stringify(arraystore));
+                    
+                    calllocaldata(); // Refresh display
+                };
+
+                store.append(newbtn);
+                input.value = ""; // Clear input
+            }
+        };
+
+        btn.addEventListener("click", callfunc);
+
+        let calllocaldata = () => {
+
+              NewDiv.innerHTML =""; // Clear previous entries
+              console.log(NewDiv);
+
+            let call = JSON.parse(localStorage.getItem("Data"));
+            arraystore = call || [];
+
+          
+
+           
+
+            arraystore.forEach((current) => {
+                let store = document.createElement("div");
+                store.classList.add("newdivadd");
+                NewDiv.append(store);
+
+                let list = document.createElement("li");
+                list.textContent = current;
+                store.append(list);
+
+                let newbtn = document.createElement("button");
+                newbtn.classList.add("classbtn");
+                newbtn.textContent = "Delete";
+
+                // Button click handler
+                newbtn.onclick = () => {
+                    arraystore = arraystore.filter(item => item !== current);
+                    localStorage.setItem("Data", JSON.stringify(arraystore));
+                    calllocaldata(); // Refresh display
+                };
+
+                store.append(newbtn);
+            });
+        };
+
+        // Call this on page load
+        // window.onload = calllocaldata;
+
+        calllocaldata();
+    </script>
+</body>
+
+</html>-

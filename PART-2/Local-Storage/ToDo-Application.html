@@ -186,24 +186,33 @@
     {
            event.preventDefault();
 
-        // console.log(event.target); //if we click any delete button gives this <button class="btnclass">DELETE</button>
- 
-           let removedata= event.target;
-           console.log(removedata);
+        console.log(event.target); //if we click any delete button gives this <button class="btnclass">DELETE</button>
+            
+        let removedata = event.target;
 
-           let siblingremove = removedata.previousElementSibling.textContent;
+        let siblingremove= removedata.previousElementSibling.textContent;
 
-           console.log(siblingremove);
+        console.log(siblingremove);
+
+
+     arraystruc= arraystruc.filter(item=> item!== siblingremove);
+
+        // console.log(arraystruc);
+
+        localStorage.setItem("DATA",JSON.stringify(arraystruc));
+
+
+     };
+
+
+
+
+
+
 
            
-           if(arraystruc.includes(siblingremove))
-           {
-                   
-           }
 
-           
-
-    }
+    
 
 
 
@@ -228,7 +237,7 @@
          let datafromlocal=JSON.parse(localStorage.getItem("DATA"));
           arraystruc = datafromlocal || [];
 
-        console.log(arraystruc);  ///Gives the Empty ARRAY or Datat which is Already Stored
+        console.log(arraystruc);  ///Gives the Empty ARRAY or Data which is Already Stored
 
 
         arraystruc.forEach((current)=>{

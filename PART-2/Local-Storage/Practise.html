@@ -1,0 +1,252 @@
+<Doctype html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta name="keyword" content="Practise Sessions">
+        <meta name="description" content="Doing practise and understanding the Todo app">
+        <meta name="robot" content="index">
+    </head>
+
+    <body>
+
+        <h1> Making The Todo Application </h1>
+
+
+        <div class="Input-sec">
+
+            <input type="text" id="inputakes" placeholder="Enter The Data">
+            <button id="action">Add-Data</button>
+
+        </div>
+
+        <div class="Storage">
+
+
+        </div>
+
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                width: 100%;
+                height: 100vh;
+
+
+                h1 {
+
+                    margin-top: 10%;
+                    display: grid;
+                    place-items: center;
+                }
+
+                .Input-sec {
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 5%;
+                    gap: 20px;
+                }
+
+                .Storage {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 5%;
+                    gap: 20px;
+                }
+
+                .newdivadd {
+
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+                }
+                .childiv{
+
+                    display:flex;
+                    flex-direction: row;
+                    gap:20px;
+                }
+                
+
+
+            }
+        </style>
+
+
+
+        <script>
+
+            let input = document.getElementById("inputakes");
+            let btn = document.getElementById("action");
+
+            let NewDiv = document.querySelector(".Storage");
+
+            let arraystore = [];
+
+            // console.log(arraystore);
+
+
+            let callfunc = (event) => {
+
+                // console.log(input.value);
+                let inputtrim = input.value.trim();
+
+                if (inputtrim != "" && !arraystore.includes(input.value.trim())) {
+
+
+
+                    arraystore.push(inputtrim); //last me add krte jayega array
+
+                    // console.log(arraystore);
+
+
+                    arraystore = [...new Set(arraystore)];
+
+                    console.log(arraystore);
+
+
+                    localStorage.setItem("Data", JSON.stringify(arraystore));
+
+
+
+
+                    let store = document.createElement("div");
+
+                    // console.log(store);
+
+                    store.classList.add("newdivadd");
+
+                    // console.log(store);
+
+                    NewDiv.append(store);
+
+                    // console.log(NewDiv);
+
+
+
+                    // --------------------------Formation Of li------------
+
+                    let list = document.createElement("li");
+                    list.textContent = input.value;
+
+                    store.append(list);
+                    //    console.log(NewDiv);
+                    console.log(store);
+
+
+                    ///-------------- Formation Of button
+
+                    let newbtn = document.createElement("button");
+                    newbtn.classList.add("classbtn");
+                    newbtn.textContent = "Delete";
+                   
+
+                // -------------------Deleting ------------------------------------
+
+                    newbtn.onclick = () => {
+                    arraystore = arraystore.filter(item => item !== inputtrim);
+                    localStorage.setItem("Data", JSON.stringify(arraystore));
+
+                    calllocaldata();
+                    
+                   
+                };
+
+                store.append(newbtn);
+                input.value = " ";
+
+                }
+
+                // else
+                // input.value = " ";
+
+               
+
+            };
+
+         
+
+            btn.addEventListener("click", () => {
+
+                callfunc(event);
+
+            });
+
+            //  When We are reloadig then the full data shown...
+
+
+            calllocaldata = () => {
+
+                NewDiv.innerHTML="";
+
+                // console.log(NewDiv);
+
+                let call = JSON.parse(localStorage.getItem("Data"));
+
+                arraystore = call || [];
+
+                console.log(arraystore);
+
+
+                arraystore.forEach((current)=>{
+
+                    // console.log(current);
+
+              
+
+                let secdiv= document.createElement("div");
+                secdiv.classList.add("childiv");
+                NewDiv.append(secdiv);
+
+                // console.log(NewDiv);
+
+
+                let firli=document.createElement("li");
+                firli.textContent=current;
+                secdiv.append(firli);
+                // console.log(secdiv);
+
+
+                let newbtn = document.createElement("button");
+                    newbtn.classList.add("classbtn");
+                    newbtn.textContent = "Delete";
+                    secdiv.append(newbtn);
+                
+
+                    newbtn.onclick = () => {
+                    arraystore = arraystore.filter(item => item !== current);
+                    localStorage.setItem("Data", JSON.stringify(arraystore));
+
+                    calllocaldata();
+                        
+                    }
+
+
+            });
+
+
+
+            
+              
+            }
+
+          
+
+
+                calllocaldata();
+
+
+        </script>
+    </body>
+
+    </html>
