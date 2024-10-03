@@ -19,7 +19,7 @@
         <div clas="Add-Data">
 
             <input type="text" placeholder="Give The Data" id="DataWrite">
-            <button id="Addbtn">Add</button>
+            <button id="Addbtn" type="button">Add</button>
         </div>
 
         <br><br>
@@ -148,7 +148,7 @@
 
         let newdiv = document.createElement("div");
         newdiv.classList.add("classadd"); //add the class in div
-        console.log(newdiv);
+        // console.log(newdiv);
         datastore.append(newdiv);  //datastore ke andar newdiv daal diyee
 
 
@@ -186,7 +186,7 @@
     {
            event.preventDefault();
 
-        console.log(event.target); //if we click any delete button gives this <button class="btnclass">DELETE</button>
+        // console.log(event.target); //if we click any delete button gives this <button class="btnclass">DELETE</button>
             
         let removedata = event.target;
 
@@ -201,29 +201,32 @@
 
         localStorage.setItem("DATA",JSON.stringify(arraystruc));
 
+        console.log(arraystruc);
 
+
+
+        // Removing Total Div which After Click on Delete button 
+
+        if(removedata.classList.contains("btnclass"))
+    {
+        let parentelem=removedata.parentElement;
+             parentelem.remove();
+             console.log(parentelem);
+
+    }
      };
-
-
-
-
-
-
-
-           
 
     
 
 
 
+     datastore.addEventListener("click",removedata);///deleting Function
+
 
     addbtn.addEventListener("click", callfunc); ///adding  Function
 //  input.addEventListener("click",(callfunc));
 
-    datastore.addEventListener("click",removedata);///deleting Function
-
-
-
+    
 
 
 
@@ -241,13 +244,13 @@
 
 
         arraystruc.forEach((current)=>{
-            console.log(current);
+            // console.log(current);
 
 //------------- creating div
 
         let newdiv = document.createElement("div");
         newdiv.classList.add("classadd"); //add the class in div
-        console.log(newdiv);
+        // console.log(newdiv);
         datastore.append(newdiv);  //datastore ke andar newdiv daal diyee
 
 

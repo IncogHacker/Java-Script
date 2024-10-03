@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="having the best world">
+    <meta name="keyword" content="">
+    <meta name="robot" content="index">
+    <title>Todo application</title>
+</head>
+<body>
+    
+    <h1>To Do Application</h1>
+
+    <div class="Enter">
+
+        <input type="text" id="inputtype" placeholder="Enter your Name">
+        <button id="btn">Click Here</button>
+
+    </div>
+
+    <div class="StorageDiv">
+
+    </div>
+
+    <style>
+        body{
+            width:100%;
+            height: 100vh;
+
+            h1{
+                display: grid;
+                place-items:center ;
+            }
+
+            .Enter{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                gap:20px;
+            }
+
+
+            .Storage Div
+            {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .divadd{
+
+                display: flex;
+                gap:20px;
+                /* align-items: center; */
+                justify-content: center;
+                padding-top: 2rem;
+            }
+        }
+
+
+
+    </style>
+
+
+<script>
+
+               let inp=document.getElementById("inputtype");
+               let clicks=document.getElementById("btn");
+
+               let store=document.querySelector(".StorageDiv");
+      
+                 
+               let arraystruc=[];
+
+               let callfunc=()=>{
+
+
+                let triminput= inp.value.trim();
+                 
+                 if(triminput!="" && !arraystruc.includes(triminput))
+
+               {
+                
+
+                arraystruc.push(inp.value.trim());
+                 localStorage.setItem("DATA",JSON.stringify(arraystruc));
+              
+                let crdiv=document.createElement("div");
+                 crdiv.classList.add("divadd");
+                 store.append(crdiv);
+
+               
+                   
+                 let crlist=document.createElement("li");
+                 crlist.textContent=inp.value;
+                 crdiv.append(crlist);
+
+                 console.log(crdiv);
+                
+                 let crbtn=document.createElement("button");
+                  crbtn.classList.add("classbtn");
+                 crbtn.textContent="DELETE";
+                 crdiv.append(crbtn);
+            
+
+               }
+ 
+               }
+
+
+               let removedata=(event)=>{
+                          
+                let store2=event.target;
+                console.log(store2);
+
+                let storesibling=store2.previousElementSibling;
+
+                console.log(storesibling);
+
+                // storesibling.remove();
+
+                let stp=storesibling.parentElement;
+
+                stp.remove();
+
+
+               }
+
+
+
+               store.addEventListener("click",(event)=>{
+
+                if(event.target.classList.contains("classbtn"))
+               {
+
+                removedata(event);
+                
+               }
+               });
+               clicks.addEventListener("click",()=>{
+                
+
+                callfunc();
+
+               });
+
+</script>
+</body>
+</html>
