@@ -1,0 +1,41 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "editor.suggest.selectionMode": "always",
+    "editor.suggestOnTriggerCharacters": false,
+    "launch": {
+        
+
+
+
+        "editor.suggest.selectionMode": "never",
+        "editor.suggestOnTriggerCharacters": true,
+    },
+    "editor.quickSuggestions": {
+        "other": "on"
+    },
+    "editor.inlineSuggest.edits.experimental.onlyShowWhenCloseToCursor": true,
+    "debug.console.historySuggestions": true,
+    "editor.inlineSuggest.edits.experimental.enabled": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "editor.snippetSuggestions": "inline",
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "json.schemas": [
+
+
+
+
+    ],
+    "editor.inlineSuggest.syntaxHighlightingEnabled": true,
+    "editor.suggest.preview": true,
+    "editor.suggest.shareSuggestSelections": false,
+    "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
+    "editor.suggest.showWords": false,
+    "editor.suggest.showReferences": true,
+    "typescript.workspaceSymbols.excludeLibrarySymbols": false,
+    "emmet.triggerExpansionOnTab": true,
+    "editor.tabCompletion": "on",
+    "emmet.useInlineCompletions": true,
+    "liveServer.settings.port": 5501
+}

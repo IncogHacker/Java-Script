@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" placeholder="" id="input-box">
+
+    <div class="first-Box">
+
+        <span id="first">Input-Name</span>
+        <span id="second">Input-Date</span>
+        <span id="third">Input-Birth</span>
+        <span id="fourth">Input-Game</span>
+
+
+    </div> Rishabh
+
+    <button id="btn">click</button>
+
+
+
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        input {
+            border-radius: 5px;
+            width: 500px;
+            height: 50px;
+            display: grid;
+            text-align: center;
+        }
+
+        body {
+            width: 100;
+            height: 100vh;
+            display: grid;
+            place-content: center;
+            background-color: black;
+
+        }
+
+        .first-Box {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-size: 2rem;
+            width: 500px;
+            height: 400px;
+            border: 2px solid rgb(255, 255, 255);
+            border-left: 10px solid rgb(206, 118, 118);
+            ;
+            border-radius: 10px;
+            background-color: rgb(237, 230, 230);
+
+
+        }
+    </style>
+
+
+    <script>
+
+
+
+        let loop = document.querySelectorAll(".first-Box span");
+        let btns = document.getElementById("btn");
+
+        let input = document.getElementById("input-box");
+
+
+
+
+
+
+
+        let index = 0;
+
+        let arraystore = [];
+
+        input.placeholder = `Pls Enter ${loop[index].textContent}`;
+
+        let callfunc = () => {
+
+            arraystore.push(input.value);
+
+            if (index < loop.length) {
+
+                loop[index].textContent = `${loop[index].textContent} >> ${input.value}`;
+
+                localStorage.setItem("data", JSON.stringify(arraystore))
+
+                input.value = "";
+
+                index++;
+
+              
+            } 
+
+            if(index < loop.length)
+            {
+                
+                input.placeholder=`Pls enter ${loop[index].textContent}`
+            }
+            else{
+
+                input.placeholder="All inputs are completed";
+            }
+               
+            
+
+        
+        }
+
+
+
+
+        btns.addEventListener("click", (callfunc));
+
+        input.addEventListener("keypress", (event) => {
+
+            if (event.key == "Enter") {
+                callfunc();
+            }
+        });
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

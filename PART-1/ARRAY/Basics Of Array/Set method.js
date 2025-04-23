@@ -28,3 +28,8 @@ const numbers=[1,2,3,4,5,6,7,8,0];
 console.log([new Set(numbers2)]);// here array is not mixed
 
 // [ Set(9) { 1, 2, 3, 4, 5, 6, 7, 8, 0 } ] -- output
+
+
+const number=[1,2,4,5,6,7,8,9,0];
+
+console.log(new Set(number));

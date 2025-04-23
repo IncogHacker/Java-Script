@@ -21,6 +21,8 @@
 
     <div class="share">
 
+       
+
         <a href="https://www.instagram.com/"><button id="one">Share On Instagram
             <img src="/Project-Color Gradient/logo and Images/instagram_2111463.png" alt="">
         </button></a>
@@ -62,7 +64,8 @@
                let btn1 =document.getElementById("clickbtn1");
                let btn2 =document.getElementById("clickbtn2");
                let copy= document.querySelector(".Bakground-linear-Gradient");
-
+            
+                 
                     
 
             //    __________________________________________________________________________
@@ -72,6 +75,8 @@
             {
                     
                 navigator.clipboard.writeText(copy.textContent);
+
+                
 
                 window.alert("Text is Copied:"  + copy.textContent);
                    
@@ -99,11 +104,12 @@
                 let callfunc1 = () =>
                 {
                    let btnclr1= findhexvalue();
-                   console.log(btnclr1);
+                   console.log(btnclr1); 
                    
                 //    ----This updates only the pargrapg text no the background colour----
 
                    let para1=document.querySelector("#para");
+                
                    //    console.log(para1.innerHTML);
 
                    para1.textContent=`background-image: linear-gradient(to right, #000000, ${btnclr1}, ${btnclr1}, ${btnclr1}, #ffffff);`;

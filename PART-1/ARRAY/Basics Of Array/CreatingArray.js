@@ -12,7 +12,7 @@ let arr0=[];
 console.log(typeof arr0); //we get the output as an object ...
 
 let arr1={};
-console.log(typeof arr1);// we get also the object coz parenthesis also defined as ovject in java
+console.log(typeof arr1);// we get also the object coz parenthesis also defined as object in java
 
 // ---------------------------------------------------------------------------------------------
 

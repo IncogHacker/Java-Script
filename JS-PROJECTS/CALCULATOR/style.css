@@ -1,0 +1,94 @@
+
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+
+body
+{
+    width:100%;
+    height: 100vh;
+    overflow-y: hidden;
+    background-image: linear-gradient(grey,rgb(31, 29, 29));
+  
+}
+
+#Headings
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#Main-box
+{
+  
+    margin: auto;
+    width:400px;
+    height:500px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius:5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    background-image: linear-gradient(grey,rgb(31, 29, 29));
+  
+   
+}
+
+
+.Value{
+       
+    border: transparent;
+    width:100%;
+    height: 3rem;
+    margin-top: 5rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 1px rgb(0, 0, 0);
+  
+}
+.Numbers
+{  
+    width:100%;
+    margin-top: 20px;
+    display: grid;
+    place-items: center;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
+    gap: 5px;
+   
+    
+
+    div{
+   
+    width:4.5rem;
+    height: 4rem;
+    border: transparent;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: large;
+    font-weight:900;
+
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-image: linear-gradient(grey,rgb(105, 99, 99));
+
+   
+}
+
+}
+.child-1,
+.child-2,
+.child-3,
+.child-4,
+.child-8,
+.child-12,
+.child-16
+{
+    color: green;
+}
+.child-20
+{
+    color: yellow;
+}

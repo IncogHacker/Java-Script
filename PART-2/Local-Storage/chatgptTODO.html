@@ -31,7 +31,7 @@
             align-items: center;
             justify-content: center;
             margin-top: 5%;
-            gap: 20px;
+                        gap: 20px;
         }
 
         .Storage {
@@ -74,6 +74,8 @@
                 arraystore.push(inputtrim);
 
                 arraystore = [...new Set(arraystore)];
+
+                
 
                 localStorage.setItem("Data", JSON.stringify(arraystore));
 

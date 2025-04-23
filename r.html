@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text" id="put"  placeholder="wrire it">
+    <button id="o">Add</button>
+
+    <button id="i">Get</button>
+
+
+    <button id="e">remove</button>
+
+    
+
+    <div class="new">
+
+    </div>
+</body>
+
+
+<script>
+
+let inp=document.getElementById("put");
+
+let btn=document.querySelector("#o");
+
+let btns=document.querySelector("#i");
+
+let btnss=document.querySelector("#e");
+
+
+
+let callfunc=()=>{
+
+
+    localStorage.setItem("data",JSON.stringify(inp.value));
+
+    console.log(inp.value);
+
+
+ 
+}
+
+
+let callfunc2=()=>{
+
+
+    let store=JSON.parse(localStorage.getItem("data"));
+
+    console.log(typeof store);
+}
+
+
+let callfunc3=()=>{
+
+    let remove= localStorage.removeItem("data");
+}
+btn.addEventListener('click',callfunc);
+btns.addEventListener('click',callfunc2);
+btnss.addEventListener('click',callfunc3);
+
+</script>
+</html>

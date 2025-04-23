@@ -22,6 +22,7 @@
         </div>
 
         <div class="Storage">
+            
 
 
         </div>
@@ -62,6 +63,7 @@
                     justify-content: center;
                     margin-top: 5%;
                     gap: 20px;
+                    /* border: 2px solid red; */
                 }
 
                 .newdivadd {
@@ -155,7 +157,8 @@
 
                     newbtn.onclick = () => {
                     arraystore = arraystore.filter(item => item !== inputtrim);
-                    localStorage.setItem("Data", JSON.stringify(arraystore));
+
+                localStorage.setItem("Data", JSON.stringify(arraystore));
 
                     calllocaldata();
                     

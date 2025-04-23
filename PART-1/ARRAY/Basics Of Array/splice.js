@@ -1,4 +1,4 @@
-//? The splice(start , deleteCounxt , item1 ,item2....n) method of Array instances changes the contents of an array by removing or replacing existing elements and/or adding new elements in place
+//? The splice(startIndexd , deleteCounxt , replaced item1 2, 3, 4) method of Array instances changes the contents of an array by removing or replacing existing elements and/or adding new elements in place..
 
 // let fruits=[`apple`, `mango`,`guava`,`pomogranate`];
 
