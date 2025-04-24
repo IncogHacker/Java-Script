@@ -16,8 +16,18 @@
 // console.log(y);
 
 
-let t=new Date(year,month,DynamicsCompressorNode,hours,minutes);
-//  let u= t.getMonth();
+// let t=new Date();
+// console.log(t);
 
 
-console.log(t);
+// practise dates 
+
+// let t = new Date("2024 6");
+
+// console.log(t);
+
+
+
+let t=new Date(2024,5,21,10,22,45);
+
+console.log(t.toLocaleString());

@@ -41,5 +41,6 @@
             const currentmills=new Date().getTime();
 
             const x=new Date(currentmills);
+             //----this is the number in milli-seconds
 
             console.log(x);

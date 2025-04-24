@@ -1,0 +1,67 @@
+
+
+<!-- Different ways of writing set time out -->
+ 
+<script>
+
+// let callfunc=()=>{
+
+
+//     console.log("After milli Seconds it run only one time ");
+// }
+
+
+// setTimeout(callfunc,1000);
+
+
+// ---------------------------------------------------------------------------
+
+
+// setInterval((callinterval)=>{
+
+// console.log("Repeating After 1000ms");
+
+// },1000)
+
+
+
+
+// ---------------------------
+
+
+
+let callinterval=(x)=>{
+
+console.log("This is printed after the milli seconds",x);
+
+
+}
+
+setTimeout(()=>{
+
+   
+    callinterval(5);
+
+},1000);
+
+
+
+
+// <!-- ------------------------------------------- -->
+
+
+
+let callintervalsecond=(x)=>{
+
+console.log("This is printed after the milli seconds",x);
+
+
+}
+
+setTimeout(()=>callintervalsecond(5),1000)
+
+
+
+
+
+</script>

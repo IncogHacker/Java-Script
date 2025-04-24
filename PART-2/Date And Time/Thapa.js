@@ -175,7 +175,7 @@
 // const localTimeString = date.toLocaleTimeString();
 // console.log(localTimeString); // Example output: "4:30:00 PM" (depending on the locale)
 
-//? 5: parse(): Parses a string representation of a date and returns the number of milliseconds since January 1, 1970, 00:00:00 UTC.
+//? 5: Date.parse(): Parses a string representation of a date and returns the number of milliseconds since January 1, 1970, 00:00:00 UTC.
 // const dateString = "2024-02-19T16:30:00Z";
 // const parsedDate = Date.parse(dateString);
 // console.log(parsedDate); // Example output: 1703254200000 (milliseconds)
@@ -222,6 +222,4 @@
 // };
 
 // // Example usage:
-// const date1 = new Date("2024-02-19");
-// const date2 = new Date("2024-03-01");
-// console.log(getDaysDifference(date1, date2)); // Output: 11 (difference in days)
+// )

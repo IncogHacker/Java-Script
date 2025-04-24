@@ -40,5 +40,7 @@ console.log(setSeconds);
 
 
 
+const time=` ${x.getHours()} :${x.getMinutes()}`;
 
+console.log(time);
 
