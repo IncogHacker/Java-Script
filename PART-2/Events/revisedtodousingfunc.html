@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="input">
+
+        <input type="text" placeholder="type your text" id="input">
+        <button class="but">Add</button>
+
+    </div>
+
+
+    <div class="store">
+
+
+    </div>
+    <style>
+        #input {
+
+            border: 2px solid none;
+        }
+    </style>
+
+</body>
+
+
+<script>
+    let input = document.querySelector("#input");
+    let btn = document.querySelector(".but");
+
+
+    let store = document.querySelector(".store")
+
+
+    let array = [];
+
+    let callfunc = () => {
+
+        let inputs = input.value.trim();
+
+
+        if (inputs !== "" && !array.includes(inputs)) {
+
+            array.push(input.value);
+
+            localStorage.setItem("DATA", JSON.stringify(array));
+
+            let para = document.createElement("p");
+            para.classList.add("paragraph");
+
+            para.textContent = input.value;
+            console.log(para);
+
+            store.append(para);
+
+
+            let del = document.createElement("button");
+
+            del.textContent = "delete";
+
+            store.append(del);
+
+            del.addEventListener('click',(event)=>delfunc(event,para,del))
+            input.value = " ";
+
+
+        }
+
+
+        else {
+
+            setTimeout(() => {
+                input.style.border = "2px solid red";
+            }, 1)
+            input.value = "";
+            input.placeholder = "Add Something first";
+
+        }
+
+
+    }
+
+       let delfunc=(event,para,del)=>{
+
+        let r=para.textContent;
+        console.log(r);
+
+        para.remove();
+        del.remove();
+        console.log("working");
+
+
+       array=array.filter((item => item!=r));
+
+              localStorage.setItem("DATA",JSON.stringify(array));  
+
+       }
+
+
+    btn.addEventListener('click', callfunc);
+</script>
+
+
+
+</html>

@@ -9,8 +9,15 @@
 
 
 
-let x=new Date();
-console.log(x);
+// let x=new Date();
+// console.log(x);
 
-y=x.getMonth();
-console.log(y);
+// y=x.getMonth();
+// console.log(y);
+
+
+let t=new Date(year,month,DynamicsCompressorNode,hours,minutes);
+//  let u= t.getMonth();
+
+
+console.log(t);
