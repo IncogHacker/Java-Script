@@ -22,6 +22,10 @@ function greet(){
 
 
 
+
+
+ 
+
  //Method---------
  
  let student={
@@ -36,6 +40,11 @@ function greet(){
  };
 
  student.greet(); // here function defined inside the object so it is called method and we are calling method by object.method();
+
+
+
+
+
 
 //  another example
 
