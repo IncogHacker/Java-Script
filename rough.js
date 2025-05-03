@@ -1,0 +1,1 @@
+console.log(format(5, 3)); 

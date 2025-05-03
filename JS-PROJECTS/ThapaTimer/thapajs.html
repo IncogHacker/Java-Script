@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thapa-Timer</title>
+</head>
+<body>
+    <div class="Main-Box">
+
+        <div class="para">
+            <p>0</p>
+
+        </div>
+
+        <div class="buttons">
+            <button id="Start">Start</button>
+            <button id="Stop">Stop</button>
+            <button id="clear-Time">Clear-Time</button>
+            <button id="Restart">Retsart</button>
+            <button id="Get-Time">Get-Time</button>
+        </div>
+
+    </div>
+
+    <div class="store">
+
+        
+
+    </div>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .store{
+            display: flex;
+            flex-direction: column;
+        }
+        body{
+            width:100%;
+            height: 100vh;
+            background-color: rgb(41, 38, 43);
+            display: grid;
+            place-items: center;
+            margin: auto;
+        }
+
+        .para
+        {
+            width: auto;
+            height: 10rem;
+            border: 2px solid red;
+            border-radius: 5px;
+            font-size: 8rem;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            
+
+            p{ 
+                /* border: 2px solid green; */
+            color: white;
+        
+            }
+        }
+        .Main-Box{
+            width:20rem;
+            height:30rem;
+            border: 3px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-evenly;
+           
+        }
+
+        .buttons{
+           
+            padding-left: 50px;
+                       
+        button{
+                width: 7rem;
+                height: 3rem;
+                border-radius: 20px;
+            }
+        }
+    </style>
+
+    <script>
+
+
+let startcount=0;
+
+let x;
+
+let callstart=()=>{
+
+     x = setInterval(()=>{
+
+        para.textContent=startcount++;
+    },1000);
+   
+}
+
+let callstop=()=>{
+    clearInterval(x);
+}
+
+
+
+let callRestart=()=>{
+
+    console.log("work");
+    startcount=0;
+    para.textContent="0";
+    clearInterval(x);
+
+}
+
+let callct=()=>{
+
+    para.textContent="0";
+    clearInterval(x);
+
+}
+
+
+let callGetTime=()=>{
+
+    
+    let p= document.createElement('para');
+    stores.append(p);
+    console.log(stores);
+    let st= startcount;
+    p.append(`you Get number is ${st-1}`);
+
+    p.style.color="red";
+
+}
+
+let para=document.querySelector(".para p");
+let stores= document.querySelector(".store");
+
+Start=document.getElementById("Start").addEventListener('click',callstart);
+Stop=document.getElementById("Stop").addEventListener('click',callstop);
+Ct= document.getElementById("clear-Time").addEventListener('click',callct);
+Restart=document.getElementById("Restart").addEventListener('click',callRestart);
+GetTime=document.getElementById("Get-Time").addEventListener('click',callGetTime);
+  
+    </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock-Timer</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="Clock-Timer">
+
+        <div class="Line-sec"></div>
+        <div class="Timer-Box" style="--i:1">5</div>
+        <div class="Timer-Box" style="--i:2">10</div>
+        <div class="Timer-Box" style="--i:3">15</div>
+        <div class="Timer-Box" style="--i:4">20</div>
+        <div class="Timer-Box" style="--i:5">25</div>
+        <div class="Timer-Box" style="--i:6">30</div>
+        <div class="Timer-Box" style="--i:7">35</div>
+        <div class="Timer-Box" style="--i:8">40</div>
+        <div class="Timer-Box" style="--i:9">45</div>
+        <div class="Timer-Box" style="--i:10">50</div>
+        <div class="Timer-Box" style="--i:11">55</div>
+        <div class="Timer-Box" style="--i:12">60</div>
+
+
+
+    </div>
+
+    <div class="TimerInside-Detail">
+        
+        <p>00:</p>
+        <p>00:00</p>
+
+
+    </div>
+
+
+
+    <div class="Control-Timer">
+
+        <button class="Flag"><img src="/JS-PROJECTS\Clock Stopwatch\Images\flag.png" alt="error" width="30rem"
+                height="30rem"></button>
+        <button class="PlayPause"><img src="/JS-PROJECTS/Clock Stopwatch/Images/play.png" alt="error" width="40rem"
+                height="40rem"></button>
+        <button class="Retry"><img src="/JS-PROJECTS/Clock Stopwatch/Images/reload.png" alt="error" width="30rem"
+                height="30rem"></button>
+
+    </div>
+
+    <div class="Timer-details">
+
+     
+
+    </div>
+
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow-y: none;
+            display: grid;
+            place-items: center;
+
+        }
+
+        /* .Timer-details{
+
+           position: absolute;
+           max-width:20rem;
+           max-height:auto;
+           overflow-x:scroll;     
+            border: 2px solid red;
+            left: 70%;
+            top: 15%;
+        } */
+
+
+        .TimerInside-Detail {
+
+            width: 8rem;
+            height: 2rem;
+            display: inline-block;
+            /* border: 2px solid red; */
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            top: 20%;
+            font-size: 2rem;
+
+            p:nth-of-type(2) {
+                color: blue;
+            }
+
+        }
+
+
+        .Clock-Timer {
+
+            width: 30rem;
+            height: 30rem;
+            border: 2px solid black;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            position: relative;
+
+        }
+
+        .Timer-Box {
+
+            position: absolute;
+            transform: rotate(calc(30deg * var(--i))) translateY(-200px) rotate(calc(-30deg * var(--i)));
+        }
+
+        .Clock-Timer::after {
+
+            content: " ";
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: black;
+            border: 2px solid black;
+
+
+
+        }
+
+        .Line-sec {
+
+            position: absolute;
+            border: 2px solid blue;
+            border-radius: 10px;
+            height: 11rem;
+            top: 16%;
+
+            transform-origin: 0% 92%;
+
+
+
+
+        }
+
+        .line-rotate {
+            animation-name: line;
+            animation-duration: 60s;
+            animation-timing-function: linear;
+            /* animation-direction: alternate; */
+            animation-play-state: running;
+            animation-iteration-count: infinite;
+
+        }
+
+        .paused {
+            animation-play-state: paused;
+        }
+
+
+        @keyframes line {
+
+            100% {
+
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        .Line-sec::after {
+            content: " ";
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            position: absolute;
+            background-color: blue;
+            top: 91%;
+            left: -4px;
+            transform-origin: center center;
+
+        }
+
+
+        .Control-Timer {
+            display: grid;
+            place-items: center;
+        }
+
+        button {
+
+            border-radius: 50%;
+            position: absolute;
+            border: none;
+            background: transparent;
+
+        }
+
+        .PlayPause {
+            z-index: 1;
+            overflow: hidden;
+        }
+
+
+        .Flag.button-transition {
+
+            transition-property: all;
+            transition-timing-function: linear;
+            transition-duration: 0.3s;
+
+
+            transform: translateX(-4rem);
+
+
+        }
+
+
+        .Retry.button-transition {
+
+            transition-property: all;
+            transition-timing-function: linear;
+            transition-duration: 0.2s;
+
+
+            transform: translateX(4rem);
+
+
+        }
+    </style>
+</body>
+
+</html>
