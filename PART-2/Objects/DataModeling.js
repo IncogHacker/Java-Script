@@ -4,7 +4,7 @@
 
 let student=[
 
-      x={
+      {
        id: "A01",
        Name: "Rishabh Singh",
        Rollno: 32,
@@ -18,13 +18,13 @@ let student=[
 
        callmethod: (()=>{
 
-        console.log(x);
+        console.log(student[0]);
 
        })
 
     },
 
-   + {
+    {
         id:"A01",
         Name:"Riya Singh",
         Rollno:23,
@@ -49,4 +49,4 @@ let student=[
 // })
 
 
-x.callmethod();
+student[0].callmethod();

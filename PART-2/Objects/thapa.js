@@ -351,7 +351,7 @@ let person = {
 //* ===============================================
 //* Interview Question - Object Transformation:
 //* ================================================
-//! Problem: Write a function that transforms an array of an objects into an object where the keys are the objects' ids.
+
 
 let inputArray = [
   { id: 1, name: "Alice" },
