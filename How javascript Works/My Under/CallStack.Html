@@ -1,0 +1,48 @@
+
+
+<!-- Here We will see How Call stack Work -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Stack</title>
+</head>
+<body>
+    
+    <script>
+
+Secondfunccall=()=>{
+
+
+    console.log("THis is THe Second function");
+    setTimeout(()=>{
+
+        console.log("function Two is starting And Code ends Here");
+
+    },2000);
+
+    callfuncthree();
+}
+
+
+   function callfuncthree(){
+
+    console.log("THis is Third Func Calling");
+   }
+
+
+        callfunc1=()=>{
+
+            console.log("Calling Function One---");
+
+            Secondfunccall();
+
+
+        }
+
+
+        callfunc1();
+    </script>
+</body>
+</html>
