@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function outerFunction(){
+
+    var outervariable="I am From outer ";
+
+    function innerFunction(){
+            console.log(outervariable);
+    }
+
+    return innerFunction;
+}
+
+
+// outerFunction()();
+
+var result=outerFunction();
+
+console.dir(result);// Shows that ye kiso define kr rhaa give output innerfunction
+
+
+
+result();
+
+
+
+
+//////
+
+
+
+
+
+    </script>
+</body>
+</html>
+

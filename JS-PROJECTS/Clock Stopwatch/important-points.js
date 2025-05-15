@@ -2,7 +2,7 @@
 
 // Some Imp elements
 
-// const x=(num,digits) => String(num).padStart(digits,"0");
+// const x=(num,digits) => String(num).padStart(digits,"0"); 
 
 // console.log(x(2 ,4));  //gives the output 0002
 

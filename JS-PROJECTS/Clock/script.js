@@ -1,6 +1,5 @@
 
 let shr = document.querySelector(".hour-line");
-
 let smin = document.querySelector(".minute-line");
 let sec = document.querySelector(".second-line");
 
@@ -15,9 +14,6 @@ let callfunction = () => {
     let minute = time.getMinutes();
    
     let seconds = time.getSeconds();
-
-
-
 
 
     console.log(time.toLocaleTimeString());

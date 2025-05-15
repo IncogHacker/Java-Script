@@ -1,8 +1,8 @@
 
-
 let startend= document.querySelector(".PlayPause");
 
 let flag =document.querySelector(".Flag")
+console.log(flag);
 
 let secline=document.querySelector(".Line-sec");
 
@@ -14,6 +14,9 @@ let img=document.querySelector(".PlayPause img")
 
 let Detail=document.querySelector(".TimerInside-Detail");
 
+
+let flagdetail=document.querySelector(".Timer-details")
+
 // console.log(Detail.textContent);
 
 let isRunning=false;
@@ -24,21 +27,19 @@ let elapsedtime=0;
 
 
 
-let callfunctext=(num , digits=2)=>{
-return String(num).padStart(digits, "0");
+// let callfunctext=(num , digits=2)=>{
+// return String(num).padStart(digits, "0");
 
-}
+// }
+
 
 let timedetail=()=>{
 
     console.log(elapsedtime);
     
-    sec= Math.floor(elapsedtime/1000);
-
-    // console.log(sec);
-   
-    min=Math.floor(elapsedtime/60);
-    hour=Math.floor(elapsedtime/60);
+    sec = Math.floor((elapsedtime / 1000) % 60);
+    min = Math.floor((elapsedtime / (1000 * 60)) % 60);
+    hour = Math.floor(elapsedtime / (1000 * 60 * 60));
 
     if(sec>=60)
     {
@@ -110,10 +111,24 @@ let playpausecallfunc=()=>{
 
 let retrycallfunc=()=>{
 
+    
     secline.classList.remove("line-rotate");
     
 }
 
+
+let givedetails=()=>{
+
+
+    let div=document.createElement("div")
+     div.classList.add("Flag-Details")
+     console.log(div);
+     div.append(`${hour}::${min}::${sec}`)
+flagdetail.append(div);
+
+
+    
+}
 
 
 startend.addEventListener('click',playpausecallfunc);
@@ -121,3 +136,4 @@ startend.addEventListener('click',playpausecallfunc);
 Retry.addEventListener('click',retrycallfunc);
 
 
+flag.addEventListener('click',givedetails);

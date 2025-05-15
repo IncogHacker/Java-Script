@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function multiplier(factor){
+
+            console.log(factor);// gives 2
+
+            return function (number){
+
+                console.log("After return");
+                console.log(number,factor);
+
+                return number * factor
+
+            }
+
+
+
+        }
+
+        let double= multiplier(2);
+        // double(5);
+
+        console.log(double(5));
+    </script>
+</body>
+</html>
