@@ -16,7 +16,7 @@
 
 // str is the string you're searching within.
 
-// regexp is the regular expression you're searching for.
+// p is the regular expression you're searching for.
 
 
 let words = "Hello javaScript , welcoe to our javaScript world best studio";

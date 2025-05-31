@@ -36,6 +36,8 @@
 // userFavNum = favNum ?? 10;
 // console.log(userFavNum);
 
+
+
 //* =======================================
 //*  Optional Chaining Operator (?.)
 //* ===================================
@@ -57,6 +59,10 @@
 //? with optional chaining
 // const city = person.address?.city ?? "city is not present";
 // console.log(city);
+
+
+
+
 //? One more example
 // The optional chaining operator can be chained multiple times to access deeply nested properties:
 

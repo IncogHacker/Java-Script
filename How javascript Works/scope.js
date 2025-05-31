@@ -3,7 +3,7 @@
 //* -------------------------
 //? Scope in JavaScript refers to the context in which variables are declared and accessed. It defines the visibility and lifetime of variables. When a variable is declared, it is bound to a specific scope, and its accessibility is determined by that scope.
 
-// todo We have a Global Scope, Function Scope and Block Scope
+// todo We have a  Scope, Function Scope and Block Scope
 
 //* -------------------------
 // * Lexical Scoping:
@@ -35,7 +35,7 @@
 //   console.log(globalVariable); // Accessible within the function
 // }
 
-// console.log(globalVariable); // Accessible globally
+// console.log(Variable); // Accessible globally
 
 //  *Function Scope:
 // Variables: Variables declared inside a function have function scope.

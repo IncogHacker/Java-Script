@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event-Propagation</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="Propagation.js" defer></script>
+  <link rel="icon" href="./favicon_io/favicon-16x16.png">
+</head>
+
+<style>
+  *{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+
+  .Outer{
+    width: 40rem;
+    height: 40rem;
+    border: 2px solid black;
+    display: grid;
+    place-items: center;
+    background-color: grey;
+
+    &::after{
+      content: "Outer";
+      color: black;
+    }
+    &:hover{
+      background-color: rgb(98, 66, 214);
+      box-shadow: 0px 0px 2px 2px black;
+    }
+  }
+
+
+  .Inner
+  {
+     display: grid;
+    place-items: center;
+    width: 30rem;
+    height: 30rem;
+    border: 2px solid rgb(0, 0, 0);
+     background-color: grey;
+
+    &::after{
+     
+      content: "Inside";
+      color: black;
+    }
+
+    &:hover{
+      background-color: green;
+    }
+  }
+
+
+  .Middle
+  {
+    width: 20rem;
+    height: 20rem;
+    border: 2px solid rgb(0, 0, 0);
+     display: grid;
+     place-items: center;
+    background-color: grey;
+      &::after{
+       
+      content: "Middle";
+      color: black;
+    }
+     &:hover{
+      background-color: red;
+    }
+  }
+
+
+</style>
+
+<body>
+  <div class="Outer">
+    
+    <div class="Inner">
+
+      <div class="Middle">
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>
