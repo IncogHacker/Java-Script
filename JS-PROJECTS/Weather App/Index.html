@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ri-Weather App</title>
+    <meta name="Description" content="Here We Get the Info About Weather of Different Countries">
+    <meta name="Keywords" content="WeatherApp , RiWeather , App, ClimateCondition, Monsoon">
+    <meta name="robot" content="index ,follow">
+    <!-- Search engines can follow all the hyperlinks on this page and potentially index those linked pages too." -->
+    <link rel="stylesheet" href="Style.css">
+    
+    <!-- defer means -Download this JavaScript file now, but wait to run it until the entire HTML document is parsed -->
+    <link rel="icon" href="/JS-PROJECTS/Weather App/Images/weather.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- this link is used to use font awesome unicode links to use image -->
+
+
+</head>
+<header>
+    <h1>Ri-Weather App</h1>
+</header>
+
+<body>
+    <div class="Main_Section">
+
+        <div class="Search">
+            <!-- <form action="Submitted"> -->
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search Your City.." id="Searching">
+            <!-- </form> -->
+        </div>
+
+        <div class="Second_Main_Section">
+
+            <div class="Country_Name">
+                <h1 id="City_Name"></h1>
+            </div>
+
+            <div class="Date&Time">
+                <h2 id="Date_Time"></h2>
+            </div>
+
+            <div class="Weather_Condition"></div>
+
+            <div class="Weather_Image"></div>
+
+
+            <p id="Temp"></p>
+            <div class="MIN_MAX">
+                <p id="Range_1"></p>
+                <p id="Range_2"></p>
+            </div>
+
+        </div>
+
+
+
+        <!-- Informatinon about humidity etc  -->
+
+        <div class="Information">
+            <div class="Weather_info">
+               <i class="fa-solid fa-temperature-three-quarters"></i>
+                <div>
+                    <p>Feels Like</p>
+                    <p id="feels"></p>
+                </div>
+            </div>
+
+            <div class="Weather_info">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                    <p>Humidity</p>
+                    <p id="Humidity"></p>
+                </div>
+            </div>
+
+            <div class="Weather_info">
+               <i class="fa-solid fa-wind"></i>
+                <div>
+                    <p>Winds</p>
+                    <p id="Winds"></p>
+                </div>
+            </div>
+
+
+            <div class="Weather_info">
+               <i class="fa-solid fa-gauge"></i>
+                <div>
+                    <p>Pressure</p>
+                    <p id="pressure"></p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+<script src="Script.js" defer></script>
+<!-- here we write coz if not then Because if you put the <script> at the top (inside <head>), the browser may try to run your JavaScript before the HTML elements are created -->
+</body>
+
+<footer>
+
+</footer>
+
+</html>

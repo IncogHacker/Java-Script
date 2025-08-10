@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //constructor
+// You'd have to manually call fill() or differents objects like you did earlier.
+ // With constructor, you set everything in one go when creating the object.
+
+//  A constructor is a special method inside a class that automatically runs when you create an object (instance) using new.
+
+// Example                                                                                     
+
+                  class Student{                                                             
+                                
+                     constructor(name,rollno)                         
+                     {
+                        this.name=name,
+                        this.rollno=rollno;
+                     }
+
+                     StudentPasses(){
+
+                        console.log(this.name,this.rollno +"--is Passed with Good marks")
+                     }
+
+                     StudentFailed(){
+                        console.log(this.name ,this.rollno +"--Is Failed with Bad marks")
+                     }
+
+                    }
+
+                    // here if not using constructor then we have to call like this
+
+                    let Passed= new Student("Rishabh",42);
+                    let failed= new Student("Riya",34);
+
+                    Passed.StudentPasses();
+                    failed.StudentFailed();
+    </script>
+</body>
+</html>

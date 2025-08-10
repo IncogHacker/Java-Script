@@ -5,3 +5,21 @@
 //! Rejected: The operation failed or encountered an error.
 
 //Promises have built-in methods like then and catch to handle the results of asynchronous operations when they complete or encounter errors, making it easier to write asynchronous code that is more readable and maintainable compared to traditional callback-based approaches.
+ 
+//? Syntax 
+
+//!using fat arrow function
+// const prom =new Promise((resolve,reject)=>{
+
+// });
+
+//!first way to write traditional
+// const proms= new Promise(function(resolve,reject){
+
+// });
+
+//? Promise.all is used when you want to wait for all promises to complete successfully. Reject state will throw an error.
+
+//? Promise.allSettled is used when you want to wait for all promises to complete, regardless of success or failure, and get information about their outcomes.
+
+//? Promise.race is used when you are interested in the result of the first promise that completes, regardless of success or failure.

@@ -29,7 +29,7 @@ let calladdfunc = () => {
         newdivconatiner.classList.add("new-content");
 
         let imgBefore = document.createElement("img");
-        imgBefore.src = "/JS-PROJECTS/TO DO List/images/checkedss.png";
+        imgBefore.src = "./images/checkedss.png";
         imgBefore.style.width = "30px";
         imgBefore.style.height = "30px";
         newdivconatiner.append(imgBefore);
@@ -51,7 +51,7 @@ let calladdfunc = () => {
 
         let img = document.createElement("img");
         img.classList.add("image");
-        img.src = "/JS-PROJECTS/TO DO List/images/cross.png";
+        img.src = "./images/cross.png";
         img.style.width = "15px";
         img.style.height = "15px";
         newdivconatiner.append(img);
@@ -78,7 +78,7 @@ let calltext = (event,imgBefore) => {
     if (event.target.style.textDecoration === "line-through") {
         event.target.style.textDecoration = "none";
 
-        imgBefore.src = "/JS-PROJECTS/TO DO List/images/checkedss.png";
+        imgBefore.src = "./images/checkedss.png";
         imgBefore.style.width = "30px";
         imgBefore.style.height = "30px";
         
@@ -87,7 +87,7 @@ let calltext = (event,imgBefore) => {
 
         event.target.style.textDecoration = "line-through";
 
-        imgBefore.src = "/JS-PROJECTS/TO DO List/images/checked.png";
+        imgBefore.src = "./images/checked.png";
         imgBefore.style.width = "30px";
         imgBefore.style.height = "30px";
 

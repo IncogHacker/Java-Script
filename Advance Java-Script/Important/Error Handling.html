@@ -1,0 +1,137 @@
+<!--* In JavaScript, the try...catch statement is used for error handling. It allows you to catch and handle exceptions (errors) that occur within a block of code. Here's how it works:
+
+ <!--? try Block: The try block contains the code that you want to execute. It is the block of code where you anticipate that an error might occur. -->
+
+<!--? catch Block: The catch block follows the try block and is used to catch any exceptions (errors) that occur within the try block. If an exception occurs, JavaScript jumps to the catch block to handle the error. The catch block takes an error object as a parameter, which can be used to access information about the error, such as its message or stack trace. -->
+
+<!--? finally Block (Optional): The finally block, if provided, is executed regardless of whether an error occurs or not. It is typically used for cleanup tasks that should always be performed, such as closing resources or releasing locks. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes Using Promises</title>
+</head>
+<body>
+
+    <style>
+        * {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: grid;
+    place-items: center;
+}
+
+.Main_Box {
+    padding-left:30px;
+    padding-right: 30px;
+    height: 10rem;
+    border: 2px solid white;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font: white;
+
+    .Jokes {
+      
+        height: 5rem;
+        /* border: 2px solid white; */
+        display: grid;
+        place-items: center;
+    }
+}
+
+button{
+    width: 20rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: 2px solid white;
+    box-shadow: 0px 0px 12px 2px white;
+
+    &:hover{
+        transform: scale(1.1)
+    }
+}
+
+
+    </style>
+    
+    <div class="Main_Box">
+
+        <h1>Welcome To Dad Jokes</h1>
+        <style>
+            h1{
+                color: white;
+                font-size: 3rem;
+            }
+        </style>
+
+        <div class="Jokes"></div>
+        <button class="button">Get Another Joke</button>
+
+    </div>
+
+    
+</body>
+
+<script>
+    //when using only async and await we cannot give try and catch error
+let Storejoke=document.querySelector(".Jokes");
+ const ApiUrl="https://icanhazdadjoke.com/";
+
+
+ //! first way using traditional method
+async function callfunc() //first make the fucntion asynchronous
+{
+    try{
+    const response= await fetch(ApiUrl,{
+        headers: 
+        {
+            Accept : "application/json"
+        }
+    })
+    console.log(response);
+
+    const store= await response.json();
+    console.log(store);
+    console.log(store.joke)
+    Storejoke.innerHTML=store.joke
+    Storejoke.style.color="white"
+    }
+
+    catch(error){
+        console.log("Do Not fetch Api");
+    }
+}
+
+
+// -------------------------------------------------------------------
+// !second way using fatarrow function 
+
+// let callfunc=async () =>{
+
+//     const fetchdata= await fetch(ApiUrl,{  //await return promise
+
+    
+//         headers:{
+//             Accept:"application/json"
+//         }
+//  });
+//         const store=await fetchdata.json();
+//         console.log(store);
+ 
+        
+// }
+
+document.querySelector(".button").addEventListener("click",callfunc)
+</script>
+</html>
