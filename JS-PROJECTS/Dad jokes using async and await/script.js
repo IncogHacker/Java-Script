@@ -5,41 +5,41 @@ let Storejoke=document.querySelector(".Jokes");
 
 
  //! first way using traditional method
-// async function callfunc() //first make the fucntion asynchronous
-// {
-//     const response= await fetch(ApiUrl,{
-//         headers: 
-//         {
-//             Accept : "application/json"
-//         }
-//     })
-//     console.log(response);
+async function callfunc() //first make the fucntion asynchronous
+{
+    const response= await fetch(ApiUrl,{
+        headers: 
+        {
+            Accept : "application/json"
+        }
+    })
+    console.log(response);
 
-//     const store= await response.json();
-//     console.log(store);
-//     console.log(store.joke)
-//     Storejoke.innerHTML=store.joke
-//     Storejoke.style.color="white"
+    const store= await response.json();
+    console.log(store);
+    console.log(store.joke)
+    Storejoke.innerHTML=store.joke
+    Storejoke.style.color="white"
 
-// }
+}
 
 
 // -------------------------------------------------------------------
 // !second way using fatarrow function 
 
-let callfunc=async () =>{
+// let callfunc=async () =>{
 
-    const fetchdata= await fetch(ApiUrl,{  //await return promise
+//     const fetchdata= await fetch(ApiUrl,{  //await return promise
 
     
-        headers:{
-            Accept:"application/json"
-        }
- });
-        const store=await fetchdata.json();
-        console.log(store);
+//         headers:{
+//             Accept:"application/json"
+//         }
+//  });
+//         const store=await fetchdata.json();
+//         console.log(store);
  
         
-}
+// }
 
 document.querySelector(".button").addEventListener("click",callfunc)
