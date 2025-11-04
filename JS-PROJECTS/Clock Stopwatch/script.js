@@ -87,7 +87,7 @@ let playpausecallfunc=()=>{
         secline.classList.add("line-rotate");
         
        
-        img.src="/JS-PROJECTS/Clock Stopwatch/images/pause.png";
+        img.src="./images/pause.png";
         isRunning=true;
     }
     
@@ -97,7 +97,7 @@ let playpausecallfunc=()=>{
        clearInterval(x);          
         console.log("working");
         secline.classList.add("paused");
-        img.src="/JS-PROJECTS/Clock Stopwatch/images/play.png"
+        img.src="./images/play.png"
         isRunning=false;
          
     }
